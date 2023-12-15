@@ -71,13 +71,24 @@ def get_majors():
     try:
         # Get limit parameter, default to 10, max 20
         limit = min(int(request.args.get('limit', 10)), 20)
-        # Get category parameter
+        # Get filter parameters
         category_id = request.args.get('category')
+        subject_id = request.args.get('subject')
         
         conn = get_db_connection()
         cur = conn.cursor(cursor_factory=RealDictCursor)
         
-        if category_id:
+        if subject_id:
+            cur.execute('''
+                SELECT m.*, s.subject_name, c.category_name 
+                FROM majors m
+                JOIN subjects s ON m.subject_id = s.subject_id
+                JOIN categories c ON s.category_id = c.category_id
+                WHERE m.subject_id = %s
+                ORDER BY m.major_id
+                LIMIT %s
+            ''', (subject_id, limit))
+        elif category_id:
             cur.execute('''
                 SELECT m.*, s.subject_name, c.category_name 
                 FROM majors m
@@ -101,5 +112,30 @@ def get_majors():
         cur.close()
         conn.close()
         return jsonify(majors), 200
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
+@major_bp.route('/majors/<major_id>', methods=['GET'])
+def get_major_by_id(major_id):
+    try:
+        conn = get_db_connection()
+        cur = conn.cursor(cursor_factory=RealDictCursor)
+        
+        cur.execute('''
+            SELECT m.*, s.subject_name, c.category_name 
+            FROM majors m
+            JOIN subjects s ON m.subject_id = s.subject_id
+            JOIN categories c ON s.category_id = c.category_id
+            WHERE m.major_id = %s
+        ''', (major_id,))
+        
+        major = cur.fetchone()
+        cur.close()
+        conn.close()
+        
+        if major is None:
+            return jsonify({'error': 'Major not found'}), 404
+            
+        return jsonify(major), 200
     except Exception as e:
         return jsonify({'error': str(e)}), 500

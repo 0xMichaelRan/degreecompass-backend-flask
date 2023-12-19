@@ -13,10 +13,8 @@ class MajorService:
             }
         }
 
-    def get_categories(self, page, page_size):
-        offset = (page - 1) * page_size
-        categories, count = self.repository.get_categories(page_size, offset)
-        return self.get_paginated_response(categories, count, page, page_size)
+    def get_categories(self):
+        return self.repository.get_categories()
 
     def get_subjects(self, category_id, page, page_size):
         offset = (page - 1) * page_size

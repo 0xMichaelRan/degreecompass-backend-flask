@@ -8,10 +8,8 @@ major_service = MajorService(MajorRepository())
 @major_bp.route('/categories', methods=['GET'])
 def get_categories():
     try:
-        page = max(int(request.args.get('page', 1)), 1)
-        page_size = min(int(request.args.get('page_size', 10)), 20)
-        result = major_service.get_categories(page, page_size)
-        return jsonify(result), 200
+        result = major_service.get_categories()
+        return jsonify({'data': result}), 200
     except Exception as e:
         return jsonify({'error': str(e)}), 500
 

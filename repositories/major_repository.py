@@ -2,21 +2,10 @@ from services.db_service import DatabaseService
 
 class MajorRepository:
     @staticmethod
-    def get_categories(page_size, offset):
-        count = DatabaseService.execute_single_query(
-            'SELECT COUNT(*) FROM categories'
-        )['count']
-        
-        categories = DatabaseService.execute_query(
-            '''
-            SELECT * FROM categories 
-            ORDER BY category_id 
-            LIMIT %s OFFSET %s
-            ''',
-            (page_size, offset)
+    def get_categories():
+        return DatabaseService.execute_query(
+            'SELECT * FROM categories ORDER BY category_id'
         )
-        
-        return categories, count
 
     @staticmethod
     def get_subjects(category_id, page_size, offset):

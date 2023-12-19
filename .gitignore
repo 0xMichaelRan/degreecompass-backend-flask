@@ -10,3 +10,4 @@ htmlcov/
 docs/_build/
 data/
 .env
+.DS_Store

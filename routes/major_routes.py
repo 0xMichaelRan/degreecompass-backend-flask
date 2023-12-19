@@ -17,7 +17,7 @@ def get_categories():
 def get_subjects():
     try:
         page = max(int(request.args.get('page', 1)), 1)
-        page_size = min(int(request.args.get('page_size', 10)), 20)
+        page_size = int(request.args.get('page_size', 28))
         category_id = request.args.get('category')
         result = major_service.get_subjects(category_id, page, page_size)
         return jsonify(result), 200
@@ -28,7 +28,7 @@ def get_subjects():
 def get_majors():
     try:
         page = max(int(request.args.get('page', 1)), 1)
-        page_size = min(int(request.args.get('page_size', 10)), 20)
+        page_size = int(request.args.get('page_size', 28))
         category_id = request.args.get('category')
         subject_id = request.args.get('subject')
         result = major_service.get_majors(category_id, subject_id, page, page_size)

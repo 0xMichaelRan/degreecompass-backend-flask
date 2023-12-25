@@ -8,6 +8,5 @@ dist/
 htmlcov/
 .tox/
 docs/_build/
-data/
 .env
 .DS_Store

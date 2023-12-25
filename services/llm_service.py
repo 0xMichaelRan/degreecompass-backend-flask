@@ -27,7 +27,7 @@ class LLMService:
         """
 
         response = self.client.chat.completions.create(
-            model="glm-4-plus",
+            model=os.getenv('ZHIPUAI_MODEL'),
             messages=[
                 {"role": "user", "content": prompt}
             ],

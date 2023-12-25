@@ -23,7 +23,7 @@ class LLMService:
         4. 这个专业需要什么特质或能力？
         5. 这个专业的发展前景如何？
 
-        请用清晰的问答格式回答。
+        请确保您的回答采用正式的书面表达方式并使用合适的Markdown格式。谢谢。
         """
 
         response = self.client.chat.completions.create(

@@ -98,4 +98,4 @@ CREATE TABLE majors (
 
 # Usage
 sql_statements = parse_major_data('data/raw_data/major_data.txt')
-write_sql_file(sql_statements, 'data/raw_data/output_major_data.sql')
+write_sql_file(sql_statements, 'data/raw_data/create_table_for_major_data.sql')

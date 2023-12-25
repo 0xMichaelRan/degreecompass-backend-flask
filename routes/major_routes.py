@@ -45,3 +45,13 @@ def get_major_by_id(major_id):
         return jsonify({'error': str(e)}), 404
     except Exception as e:
         return jsonify({'error': str(e)}), 500
+
+@major_bp.route('/majors/<major_id>/qa', methods=['GET'])
+def get_major_qa(major_id):
+    try:
+        qa_data = major_service.get_major_qa(major_id)
+        return jsonify(qa_data), 200
+    except ValueError as e:
+        return jsonify({'error': str(e)}), 404
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500

@@ -87,7 +87,7 @@ class MajorRepository:
 
     @staticmethod
     def save_major_qa(major_id, qa_content):
-        return DatabaseService.execute_query(
+        result = DatabaseService.execute_single_query(
             '''
             INSERT INTO major_qa (major_id, qa_content)
             VALUES (%s, %s)
@@ -97,6 +97,7 @@ class MajorRepository:
             ''',
             (major_id, qa_content)
         )
+        return result
 
     @staticmethod
     def get_major_qa(major_id):

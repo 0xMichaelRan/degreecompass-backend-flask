@@ -20,10 +20,12 @@ class DatabaseService:
             cur = conn.cursor(cursor_factory=RealDictCursor)
             cur.execute(query, params or ())
             result = cur.fetchall()
+            conn.commit()
             cur.close()
             conn.close()
             return result
         except Exception as e:
+            conn.rollback()
             raise e
 
     @staticmethod
@@ -33,8 +35,10 @@ class DatabaseService:
             cur = conn.cursor(cursor_factory=RealDictCursor)
             cur.execute(query, params or ())
             result = cur.fetchone()
+            conn.commit()
             cur.close()
             conn.close()
             return result
         except Exception as e:
+            conn.rollback()
             raise e 

@@ -87,22 +87,33 @@ class MajorRepository:
 
     @staticmethod
     def save_major_qa(major_id, qa_sql_statements):
-        # First delete existing QA for this major
-        DatabaseService.execute_query(
-            'DELETE FROM major_qa WHERE major_id = %s',
-            (major_id,)
-        )
-        
-        # Execute each INSERT statement
-        for sql_statement in qa_sql_statements.strip().split(';'):
-            if sql_statement.strip():
-                DatabaseService.execute_query(sql_statement)
-        
-        # Return all QA for this major
-        return DatabaseService.execute_query(
-            'SELECT * FROM major_qa WHERE major_id = %s ORDER BY id',
-            (major_id,)
-        )
+        try:
+            # First delete existing QA
+            DatabaseService.execute_query(
+                'DELETE FROM major_qa WHERE major_id = %s',
+                (major_id,)
+            )
+            
+            # Execute each INSERT statement
+            executed_count = 0
+            for sql_statement in qa_sql_statements.strip().split('\n'):
+                if sql_statement.strip():
+                    DatabaseService.execute_query(sql_statement)
+                    executed_count += 1
+            
+            print(f"Executed {executed_count} INSERT statements for major {major_id}")
+            
+            # Return all QA for this major
+            result = DatabaseService.execute_query(
+                'SELECT * FROM major_qa WHERE major_id = %s ORDER BY id',
+                (major_id,)
+            )
+            print(f"Retrieved {len(result)} QA pairs for major {major_id}")
+            return result
+            
+        except Exception as e:
+            print(f"Error in save_major_qa for major {major_id}: {str(e)}")
+            raise
 
     @staticmethod
     def get_major_qa(major_id):

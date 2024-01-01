@@ -90,38 +90,50 @@ class MajorRepository:
         )
 
     @staticmethod
-    def save_major_qa(major_id, qa_content):
+    def save_major_qa(major_id, qa_sql_statements):
         try:
-            print(f"\n=== Starting save_major_qa for major {major_id} ===")
+            print(f"=== Starting save_major_qa for major {major_id} ===")
+
+            # First delete existing QA
+            DatabaseService.execute_query(
+                "DELETE FROM major_qa WHERE major_id = %s RETURNING id", 
+                (major_id,)
+            )
+
+            # Parse and execute INSERT statements
             executed_count = 0
-            results = []
-            
-            for sql_statement in qa_content.strip().split("\n"):
+            for sql_statement in qa_sql_statements.strip().split("\n"):
                 parsed_values = SQLParserService.parse_qa_values(sql_statement)
                 if parsed_values:
-                    result = DatabaseService.execute_single_query(
+                    DatabaseService.execute_query(
                         """
-                        INSERT INTO major_qa (major_id, question, answer)
-                        VALUES (%s, %s, %s)
-                        ON CONFLICT (major_id, question) 
-                        DO UPDATE SET 
-                            answer = EXCLUDED.answer,
-                            updated_at = CURRENT_TIMESTAMP
-                        RETURNING *
+                        INSERT INTO major_qa (major_id, question, answer) 
+                        VALUES (%s, %s, %s) RETURNING id
                         """,
                         (
-                            parsed_values['major_id'],
-                            parsed_values['question'],
+                            parsed_values['major_id'], 
+                            parsed_values['question'], 
                             parsed_values['answer']
                         ),
                     )
-                    if result:
-                        results.append(result)
-                        executed_count += 1
-            
+                    executed_count += 1
+
             print(f"\nTotal statements executed: {executed_count}")
-            return results
-            
+
+            # Return all QA for this major
+            result = DatabaseService.execute_query(
+                """
+                SELECT id, major_id, question, answer, 
+                       created_at, updated_at 
+                FROM major_qa 
+                WHERE major_id = %s 
+                ORDER BY id
+                """,
+                (major_id,),
+            )
+
+            return result or []
+
         except Exception as e:
             print("\n!!! Error in save_major_qa !!!")
             print(f"Major ID: {major_id}")
@@ -146,7 +158,7 @@ class MajorRepository:
     @staticmethod
     def save_major_intro(major_id, intro_content):
         try:
-            print(f"\n=== Starting save_major_intro for major {major_id} ===")
+            print(f"=== Starting save_major_intro for major {major_id} ===")
             
             # Save or update intro content
             result = DatabaseService.execute_single_query(

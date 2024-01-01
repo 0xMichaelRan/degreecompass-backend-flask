@@ -37,22 +37,7 @@ class LLMService:
         return response.choices[0].message.content
 
     def get_major_intro(self, major_info):
-        prompt = f"""
-        我是一名大学申请者，对大学专业不太了解。请用书面语，并以适当的Markdown格式为我提供关于【{major_info['major_name']}】的一般信息，包括以下几个方面：
-
-        学习领域：该专业涉及的主要学习领域是什么？
-
-        适合学生类型：【{major_info['major_name']}】适合什么类型的学生？例如，具备哪些特质或兴趣的学生可能更适合这个专业？
-
-        就业机会：学习【{major_info['major_name']}】的学生在毕业后有哪些常见的就业方向和职业机会？
-
-        入学要求：申请学习【{major_info['major_name']}】通常需要满足哪些学术和非学术的入学要求？
-
-        预期薪资：在【{major_info['major_name']}】领域工作的毕业生一般可以期待怎样的起薪和职业发展薪资水平？
-
-        尽量使用间断的条目形式，控制总字数在200字以内。谢谢。
-        """
-
+        prompt = get_major_intro_prompt(major_info)
         response = self.client.chat.completions.create(
             model=os.getenv('ZHIPUAI_MODEL'),
             messages=[
@@ -60,5 +45,4 @@ class LLMService:
             ],
             temperature=0.7,
         )
-        
         return response.choices[0].message.content

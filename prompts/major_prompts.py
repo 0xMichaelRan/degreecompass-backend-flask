@@ -1,20 +1,3 @@
-def get_major_qa_prompt(major_info):
-    return f"""
-    请你作为一个专业的教育顾问，为以下专业提供详细的问答信息：
-
-    专业名称：{major_info['major_name']}
-    学科类别：{major_info['subject_name']}
-    门类：{major_info['category_name']}
-
-    请提供以下方面的信息：
-    1. 这个专业主要学什么？
-    2. 这个专业的主要课程有哪些？
-    3. 这个专业的就业方向有哪些？
-    4. 这个专业需要什么特质或能力？
-    5. 这个专业的发展前景如何？
-
-    请确保您的回答采用正式的书面表达方式并使用合适的Markdown格式。谢谢。
-    """
 
 def get_major_intro_prompt(major_info):
     return f"""

@@ -105,3 +105,24 @@ class MajorRepository:
             'SELECT * FROM major_qa WHERE major_id = %s',
             (major_id,)
         )
+
+    @staticmethod
+    def save_major_intro(major_id, intro_content):
+        result = DatabaseService.execute_single_query(
+            '''
+            INSERT INTO major_intro (major_id, intro_content)
+            VALUES (%s, %s)
+            ON CONFLICT (major_id) 
+            DO UPDATE SET intro_content = EXCLUDED.intro_content, updated_at = CURRENT_TIMESTAMP
+            RETURNING *
+            ''',
+            (major_id, intro_content)
+        )
+        return result
+
+    @staticmethod
+    def get_major_intro(major_id):
+        return DatabaseService.execute_single_query(
+            'SELECT * FROM major_intro WHERE major_id = %s',
+            (major_id,)
+        )

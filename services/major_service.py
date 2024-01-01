@@ -52,4 +52,22 @@ class MajorService:
         
         # Save and return the QA content
         return self.repository.save_major_qa(major_id, qa_content)
+
+    def get_major_intro(self, major_id):
+        # First check if we have cached intro
+        intro_data = self.repository.get_major_intro(major_id)
+        
+        if intro_data:
+            return intro_data
+            
+        # If no cached data, get major info and generate intro
+        major_info = self.repository.get_major_by_id(major_id)
+        if not major_info:
+            raise ValueError('Major not found')
+            
+        # Generate intro using LLM
+        intro_content = self.llm_service.get_major_intro(major_info)
+        
+        # Save and return the intro content
+        return self.repository.save_major_intro(major_id, intro_content)
   

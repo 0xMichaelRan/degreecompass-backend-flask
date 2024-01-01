@@ -7,9 +7,9 @@ def get_major_intro_prompt(major_info):
 
     适合学生类型：【{major_info['major_name']}】适合什么类型的学生？例如，具备哪些特质或兴趣的学生可能更适合这个专业？
 
-    就业机会：学习【{major_info['major_name']}】的学生在毕业后有哪些常见的就业方向和职业机会？
+    就业机会：学习【{major_info['major_name']}】的学生在毕业后有哪些常见的就业方向和职业机会？行业前景如何？
 
-    控制总字数在200字以内，不需要标题，不要用列表形式。谢谢。
+    控制总字数在200字以内，不需要标题，不要用列表形式。
     """ 
 
 def get_major_qa_prompt(major_info):
@@ -21,11 +21,11 @@ def get_major_qa_prompt(major_info):
     门类：{major_info['category_name']}
 
     请为以下5个问题提供答案，并将答案转换为对应的SQL INSERT语句：
-    1. 这个专业主要学什么？
-    2. 这个专业的主要课程有哪些？
-    3. 这个专业的就业方向有哪些？
-    4. 这个专业需要什么特质或能力？
-    5. 这个专业的发展前景如何？
+    1. {major_info['major_name']}主要学什么？
+    2. 哪些大学课程是{major_info['major_name']}的本科学生必修的？
+    3. 未来就业方向有哪些？有哪些著名企业定向招聘？
+    4. 读{major_info['major_name']}的学生考研比例大吗？
+    5. 读{major_info['major_name']}的学生适合做公务员吗？
 
     请严格按照以下格式返回SQL语句（每个INSERT必须在单独一行）：
     INSERT INTO major_qa (major_id, question, answer) VALUES ('{major_info['major_id']}', '这个专业主要学什么？', '答案1');

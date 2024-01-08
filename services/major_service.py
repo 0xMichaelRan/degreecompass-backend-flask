@@ -77,4 +77,9 @@ class MajorService:
         except Exception as e:
             logger.error(f"Error getting AI answer for major {context['major_id']}: {str(e)}")
             raise
+
+    def search_majors(self, keyword, page, page_size):
+        offset = (page - 1) * page_size
+        majors, count = self.repository.search_majors(keyword, page_size, offset)
+        return self.get_paginated_response(majors, count, page, page_size)
   

@@ -16,7 +16,7 @@ class LLMService:
     def get_major_qa(self, major_info):
         prompt = get_major_qa_prompt(major_info)
 
-        logger.info(f"Sending QA request to ZhipuAI for major {major_info['major_id']}")
+        logger.info(f"\n=== Sending QA request to ZhipuAI for major {major_info['major_id']} ===")
 
         try:
             response = self.client.chat.completions.create(
@@ -27,7 +27,7 @@ class LLMService:
 
             content = response.choices[0].message.content
             logger.info(
-                f"Received QA response from ZhipuAI for major {major_info['major_id']}"
+                f"\n=== Received QA response from ZhipuAI for major {major_info['major_id']} ==="
             )
             logger.debug(f"Response content: {content}")
 
@@ -46,7 +46,7 @@ class LLMService:
 
         except Exception as e:
             logger.error(
-                f"Error calling ZhipuAI for major {major_info['major_id']}: {str(e)}"
+                f"\n=== Error calling ZhipuAI for major {major_info['major_id']}: {str(e)} ===" 
             )
             raise
 
@@ -66,7 +66,7 @@ class LLMService:
 
             content = response.choices[0].message.content
             logger.info(
-                f"Received intro response from ZhipuAI for major {major_info['major_id']}"
+                f"\n=== Received intro response from ZhipuAI for major {major_info['major_id']} ==="
             )
             logger.debug(f"Response content: {content}")
 
@@ -74,7 +74,7 @@ class LLMService:
 
         except Exception as e:
             logger.error(
-                f"Error calling ZhipuAI for major {major_info['major_id']}: {str(e)}"
+                f"\n=== Error calling ZhipuAI for major {major_info['major_id']}: {str(e)} ==="
             )
             raise
 
@@ -94,11 +94,11 @@ class LLMService:
             )
 
             content = response.choices[0].message.content
-            logger.info(f"Received answer from ZhipuAI for major {context['major_id']}")
+            logger.info(f"\n=== Received answer from ZhipuAI for major {context['major_id']} ===")
             logger.debug(f"Response content: {content}")
 
             return content
 
         except Exception as e:
-            logger.error(f"Error calling ZhipuAI for major {context['major_id']}: {str(e)}")
+            logger.error(f"\n=== Error calling ZhipuAI for major {context['major_id']}: {str(e)} ===")
             raise

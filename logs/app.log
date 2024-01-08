@@ -65,3 +65,261 @@
 2024-11-25 03:27:49,896 - werkzeug - WARNING -  * Debugger is active!
 2024-11-25 03:27:56,970 - werkzeug - WARNING -  * Debugger is active!
 2024-11-25 03:28:08,024 - werkzeug - WARNING -  * Debugger is active!
+2024-11-25 03:28:44,305 - werkzeug - WARNING -  * Debugger is active!
+2024-11-25 03:28:52,206 - werkzeug - WARNING -  * Debugger is active!
+2024-11-25 03:30:00,144 - werkzeug - WARNING -  * Debugger is active!
+2024-11-25 03:30:47,960 - services.llm_service - INFO - 
+=== Sending QA request to ZhipuAI for 音乐表演 (ID: 130201) ===
+2024-11-25 03:30:47,989 - services.llm_service - INFO - 
+=== Sending intro request to ZhipuAI for 音乐表演 (ID: 130201) ===
+2024-11-25 03:30:51,608 - httpx - INFO - HTTP Request: POST https://open.bigmodel.cn/api/paas/v4/chat/completions "HTTP/1.1 200 OK"
+2024-11-25 03:30:51,612 - services.llm_service - INFO - 
+=== Received intro response from ZhipuAI for 音乐表演 (ID: 130201) ===
+2024-11-25 03:30:51,612 - repositories.major_repository - INFO - === Starting save_major_intro for major 130201 ===
+2024-11-25 03:30:51,637 - repositories.major_repository - INFO - Successfully saved intro for major 130201
+2024-11-25 03:30:56,537 - httpx - INFO - HTTP Request: POST https://open.bigmodel.cn/api/paas/v4/chat/completions "HTTP/1.1 200 OK"
+2024-11-25 03:30:56,540 - services.llm_service - INFO - 
+=== Received QA response from ZhipuAI for 音乐表演 (ID: 130201) ===
+2024-11-25 03:30:56,540 - repositories.major_repository - INFO - === Starting save_major_qa for major 130201 ===
+2024-11-25 03:30:56,671 - repositories.major_repository - INFO - Total statements executed: 5
+2024-11-25 03:32:47,285 - services.llm_service - INFO - 
+=== Sending QA request to ZhipuAI for 音乐学 (ID: 130202) ===
+2024-11-25 03:32:47,322 - services.llm_service - INFO - 
+=== Sending intro request to ZhipuAI for 音乐学 (ID: 130202) ===
+2024-11-25 03:32:50,813 - httpx - INFO - HTTP Request: POST https://open.bigmodel.cn/api/paas/v4/chat/completions "HTTP/1.1 200 OK"
+2024-11-25 03:32:50,816 - services.llm_service - INFO - 
+=== Received intro response from ZhipuAI for 音乐学 (ID: 130202) ===
+2024-11-25 03:32:50,816 - repositories.major_repository - INFO - === Starting save_major_intro for major 130202 ===
+2024-11-25 03:32:50,841 - repositories.major_repository - INFO - Successfully saved intro for major 130202
+2024-11-25 03:32:56,788 - httpx - INFO - HTTP Request: POST https://open.bigmodel.cn/api/paas/v4/chat/completions "HTTP/1.1 200 OK"
+2024-11-25 03:32:56,791 - services.llm_service - INFO - 
+=== Received QA response from ZhipuAI for 音乐学 (ID: 130202) ===
+2024-11-25 03:32:56,791 - repositories.major_repository - INFO - === Starting save_major_qa for major 130202 ===
+2024-11-25 03:32:56,915 - repositories.major_repository - INFO - Total statements executed: 5
+2024-11-25 03:33:43,996 - werkzeug - WARNING -  * Debugger is active!
+2024-11-25 03:33:58,001 - werkzeug - WARNING -  * Debugger is active!
+2024-11-25 03:36:10,740 - werkzeug - WARNING -  * Debugger is active!
+2024-11-25 03:36:53,056 - werkzeug - WARNING -  * Debugger is active!
+2024-11-25 03:37:52,129 - services.llm_service - INFO - 
+=== Sending QA request to ZhipuAI for 作曲与作曲技术理论 (ID: 130203) ===
+2024-11-25 03:37:52,170 - services.llm_service - INFO - 
+=== Sending intro request to ZhipuAI for 作曲与作曲技术理论 (ID: 130203) ===
+2024-11-25 03:37:55,379 - httpx - INFO - HTTP Request: POST https://open.bigmodel.cn/api/paas/v4/chat/completions "HTTP/1.1 200 OK"
+2024-11-25 03:37:55,383 - services.llm_service - INFO - 
+=== Received intro response from ZhipuAI for 作曲与作曲技术理论 (ID: 130203) ===
+2024-11-25 03:37:55,383 - repositories.major_repository - INFO - 
+=== Starting save_major_intro for major 130203 ===
+2024-11-25 03:37:55,407 - repositories.major_repository - INFO - Successfully saved intro for major 130203
+2024-11-25 03:38:01,933 - httpx - INFO - HTTP Request: POST https://open.bigmodel.cn/api/paas/v4/chat/completions "HTTP/1.1 200 OK"
+2024-11-25 03:38:01,936 - services.llm_service - INFO - 
+=== Received QA response from ZhipuAI for 作曲与作曲技术理论 (ID: 130203) ===
+2024-11-25 03:38:01,936 - repositories.major_repository - INFO - 
+=== Starting save_major_qa for major 130203 ===
+2024-11-25 03:38:02,072 - repositories.major_repository - INFO - Total statements executed: 5
+2024-11-25 03:38:36,978 - werkzeug - WARNING -  * Debugger is active!
+2024-11-25 03:38:57,425 - services.llm_service - INFO - 
+=== Sending QA request to ZhipuAI for 舞蹈表演 (ID: 130204) ===
+2024-11-25 03:38:57,426 - zhipuai.api_resource.chat.completions - DEBUG - temperature:0.7, top_p:NOT_GIVEN
+2024-11-25 03:38:57,426 - zhipuai.api_resource.chat.completions - DEBUG - temperature:0.7, top_p:NOT_GIVEN
+2024-11-25 03:38:57,429 - httpcore.connection - DEBUG - connect_tcp.started host='open.bigmodel.cn' port=443 local_address=None timeout=8.0 socket_options=None
+2024-11-25 03:38:57,476 - services.llm_service - INFO - 
+=== Sending intro request to ZhipuAI for 舞蹈表演 (ID: 130204) ===
+2024-11-25 03:38:57,477 - zhipuai.api_resource.chat.completions - DEBUG - temperature:0.7, top_p:NOT_GIVEN
+2024-11-25 03:38:57,477 - zhipuai.api_resource.chat.completions - DEBUG - temperature:0.7, top_p:NOT_GIVEN
+2024-11-25 03:38:57,478 - httpcore.connection - DEBUG - connect_tcp.started host='open.bigmodel.cn' port=443 local_address=None timeout=8.0 socket_options=None
+2024-11-25 03:38:57,488 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x10a93e790>
+2024-11-25 03:38:57,488 - httpcore.connection - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x10a33f0b0> server_hostname='open.bigmodel.cn' timeout=8.0
+2024-11-25 03:38:57,491 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x10a948450>
+2024-11-25 03:38:57,492 - httpcore.connection - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x10a33f0b0> server_hostname='open.bigmodel.cn' timeout=8.0
+2024-11-25 03:38:57,519 - httpcore.connection - DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x10a949110>
+2024-11-25 03:38:57,520 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2024-11-25 03:38:57,521 - httpcore.http11 - DEBUG - send_request_headers.complete
+2024-11-25 03:38:57,521 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2024-11-25 03:38:57,521 - httpcore.connection - DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x10a9499d0>
+2024-11-25 03:38:57,522 - httpcore.http11 - DEBUG - send_request_body.complete
+2024-11-25 03:38:57,522 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2024-11-25 03:38:57,522 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2024-11-25 03:38:57,523 - httpcore.http11 - DEBUG - send_request_headers.complete
+2024-11-25 03:38:57,523 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2024-11-25 03:38:57,523 - httpcore.http11 - DEBUG - send_request_body.complete
+2024-11-25 03:38:57,523 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2024-11-25 03:39:00,880 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Sun, 24 Nov 2024 19:39:00 GMT'), (b'Content-Type', b'application/json; charset=UTF-8'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'Set-Cookie', b'acw_tc=0a472f8e17324771376545388e004e49f23c8af55b25bf51e7cf80df99e5cd;path=/;HttpOnly;Max-Age=1800'), (b'Vary', b'Accept-Encoding'), (b'Vary', b'Origin'), (b'Vary', b'Access-Control-Request-Method'), (b'Vary', b'Access-Control-Request-Headers'), (b'X-LOG-ID', b'20241125033857e8a3254326e04f7b'), (b'Vary', b'Origin'), (b'Vary', b'Access-Control-Request-Method'), (b'Vary', b'Access-Control-Request-Headers'), (b'Strict-Transport-Security', b'max-age=31536000; includeSubDomains'), (b'Content-Encoding', b'gzip')])
+2024-11-25 03:39:00,882 - httpx - INFO - HTTP Request: POST https://open.bigmodel.cn/api/paas/v4/chat/completions "HTTP/1.1 200 OK"
+2024-11-25 03:39:00,882 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2024-11-25 03:39:00,883 - httpcore.http11 - DEBUG - receive_response_body.complete
+2024-11-25 03:39:00,883 - httpcore.http11 - DEBUG - response_closed.started
+2024-11-25 03:39:00,883 - httpcore.http11 - DEBUG - response_closed.complete
+2024-11-25 03:39:00,883 - zhipuai.core._http_client - DEBUG - HTTP Request: POST https://open.bigmodel.cn/api/paas/v4/chat/completions "200 OK"
+2024-11-25 03:39:00,887 - services.llm_service - INFO - 
+=== Received intro response from ZhipuAI for 舞蹈表演 (ID: 130204) ===
+2024-11-25 03:39:00,887 - services.llm_service - DEBUG - Response content: **舞蹈表演**专业涵盖舞蹈技巧、编舞、表演艺术等领域，注重身体语言与舞台表现力。适合对舞蹈充满热情、有良好身体协调性和艺术感知力的学生。毕业后，可从事职业舞者、编导、艺术教育等工作，行业需求稳定。知名高校如北京舞蹈学院、上海戏剧学院等，培养出杨丽萍、黄豆豆等杰出校友。选择此专业，需热爱舞蹈并准备好面对艺术道路的挑战与机遇。
+2024-11-25 03:39:00,887 - repositories.major_repository - INFO - 
+=== Starting save_major_intro for major 130204 ===
+2024-11-25 03:39:00,934 - repositories.major_repository - INFO - Successfully saved intro for major 130204
+2024-11-25 03:39:08,288 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Sun, 24 Nov 2024 19:39:08 GMT'), (b'Content-Type', b'application/json; charset=UTF-8'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'Set-Cookie', b'acw_tc=0a47318317324771376555461e009751e9c61c63038baf5695dc3a3e557c8d;path=/;HttpOnly;Max-Age=1800'), (b'Vary', b'Accept-Encoding'), (b'Vary', b'Origin'), (b'Vary', b'Access-Control-Request-Method'), (b'Vary', b'Access-Control-Request-Headers'), (b'X-LOG-ID', b'20241125033857cd436c1a3ea64e05'), (b'Vary', b'Origin'), (b'Vary', b'Access-Control-Request-Method'), (b'Vary', b'Access-Control-Request-Headers'), (b'Strict-Transport-Security', b'max-age=31536000; includeSubDomains'), (b'Content-Encoding', b'gzip')])
+2024-11-25 03:39:08,289 - httpx - INFO - HTTP Request: POST https://open.bigmodel.cn/api/paas/v4/chat/completions "HTTP/1.1 200 OK"
+2024-11-25 03:39:08,289 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2024-11-25 03:39:08,290 - httpcore.http11 - DEBUG - receive_response_body.complete
+2024-11-25 03:39:08,290 - httpcore.http11 - DEBUG - response_closed.started
+2024-11-25 03:39:08,290 - httpcore.http11 - DEBUG - response_closed.complete
+2024-11-25 03:39:08,291 - httpcore.connection - DEBUG - close.started
+2024-11-25 03:39:08,291 - httpcore.connection - DEBUG - close.complete
+2024-11-25 03:39:08,291 - zhipuai.core._http_client - DEBUG - HTTP Request: POST https://open.bigmodel.cn/api/paas/v4/chat/completions "200 OK"
+2024-11-25 03:39:08,295 - services.llm_service - INFO - 
+=== Received QA response from ZhipuAI for 舞蹈表演 (ID: 130204) ===
+2024-11-25 03:39:08,295 - services.llm_service - DEBUG - Response content: INSERT INTO major_qa (major_id, question, answer) VALUES ('130204', '舞蹈表演主要学什么？', '舞蹈表演专业主要学习舞蹈的基本理论、技巧、编创方法，以及不同舞种（如芭蕾舞、现代舞、民族舞等）的表演实践。此外，还包括艺术修养、音乐理解、舞台表演等方面的综合训练。');
+INSERT INTO major_qa (major_id, question, answer) VALUES ('130204', '哪些大学课程是舞蹈表演的本科学生必修的？', '必修课程包括舞蹈基础训练、舞蹈编创、舞蹈史论、音乐基础、表演技巧等。具体课程如芭蕾基训、现代舞基训、民族民间舞、舞蹈剧目排练、舞蹈解剖学等，旨在全面提升学生的舞蹈表演能力。');
+INSERT INTO major_qa (major_id, question, answer) VALUES ('130204', '未来就业方向有哪些？有哪些著名企业定向招聘？', '就业方向包括专业舞蹈演员、舞蹈教师、编导、艺术团体成员等。著名企业如中央芭蕾舞团、中国歌剧舞剧院、各大卫视及影视公司等，部分高校和文艺团体也会定向招聘舞蹈表演专业毕业生。');
+INSERT INTO major_qa (major_id, question, answer) VALUES ('130204', '读舞蹈表演的学生考研比例大吗？', '舞蹈表演专业考研比例相对较小，多数学生选择直接就业。但仍有部分学生选择继续深造，攻读舞蹈学、艺术管理等研究生专业，以提升理论水平和综合素养。');
+INSERT INTO major_qa (major_id, question, answer) VALUES ('130204', '读舞蹈表演的学生适合做公务员吗？', '舞蹈表演专业学生适合公务员岗位的情况较少，因公务员招聘多侧重行政、管理类背景。但部分文化部门、教育系统等岗位可能会招聘具有艺术背景的人才，学生可根据自身兴趣和条件选择。');
+2024-11-25 03:39:08,296 - repositories.major_repository - INFO - 
+=== Starting save_major_qa for major 130204 ===
+2024-11-25 03:39:08,607 - repositories.major_repository - INFO - Total statements executed: 5
+2024-11-25 03:40:41,502 - werkzeug - WARNING -  * Debugger is active!
+2024-11-25 03:41:00,653 - services.major_service - INFO - Getting intro data for major 130201
+2024-11-25 03:41:00,681 - services.major_service - INFO - Found cached intro data for major 130201
+2024-11-25 03:41:00,681 - services.major_service - INFO - Processing question for major 音乐表演 (ID: 130201)
+2024-11-25 03:41:00,681 - services.major_service - DEBUG - Question: how much salary 
+
+2024-11-25 03:41:00,683 - services.llm_service - INFO - 
+=== Sending question to ZhipuAI for 音乐表演 (ID: 130201) ===
+2024-11-25 03:41:00,684 - zhipuai.api_resource.chat.completions - DEBUG - temperature:0.7, top_p:NOT_GIVEN
+2024-11-25 03:41:00,684 - zhipuai.api_resource.chat.completions - DEBUG - temperature:0.7, top_p:NOT_GIVEN
+2024-11-25 03:41:00,686 - httpcore.connection - DEBUG - connect_tcp.started host='open.bigmodel.cn' port=443 local_address=None timeout=8.0 socket_options=None
+2024-11-25 03:41:00,725 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x10e8685d0>
+2024-11-25 03:41:00,725 - httpcore.connection - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x10e23f140> server_hostname='open.bigmodel.cn' timeout=8.0
+2024-11-25 03:41:00,759 - httpcore.connection - DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x10e868590>
+2024-11-25 03:41:00,759 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2024-11-25 03:41:00,760 - httpcore.http11 - DEBUG - send_request_headers.complete
+2024-11-25 03:41:00,760 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2024-11-25 03:41:00,760 - httpcore.http11 - DEBUG - send_request_body.complete
+2024-11-25 03:41:00,760 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2024-11-25 03:41:03,593 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Sun, 24 Nov 2024 19:41:03 GMT'), (b'Content-Type', b'application/json; charset=UTF-8'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'Set-Cookie', b'acw_tc=0a47329d17324772609044674e00d7f2e384fdad95cb7b0165c179b2f3ff1c;path=/;HttpOnly;Max-Age=1800'), (b'Vary', b'Accept-Encoding'), (b'Vary', b'Origin'), (b'Vary', b'Access-Control-Request-Method'), (b'Vary', b'Access-Control-Request-Headers'), (b'X-LOG-ID', b'2024112503410136939bb92425491f'), (b'Vary', b'Origin'), (b'Vary', b'Access-Control-Request-Method'), (b'Vary', b'Access-Control-Request-Headers'), (b'Strict-Transport-Security', b'max-age=31536000; includeSubDomains'), (b'Content-Encoding', b'gzip')])
+2024-11-25 03:41:03,595 - httpx - INFO - HTTP Request: POST https://open.bigmodel.cn/api/paas/v4/chat/completions "HTTP/1.1 200 OK"
+2024-11-25 03:41:03,595 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2024-11-25 03:41:03,596 - httpcore.http11 - DEBUG - receive_response_body.complete
+2024-11-25 03:41:03,596 - httpcore.http11 - DEBUG - response_closed.started
+2024-11-25 03:41:03,596 - httpcore.http11 - DEBUG - response_closed.complete
+2024-11-25 03:41:03,596 - zhipuai.core._http_client - DEBUG - HTTP Request: POST https://open.bigmodel.cn/api/paas/v4/chat/completions "200 OK"
+2024-11-25 03:41:03,600 - services.llm_service - INFO - 
+=== Received answer from ZhipuAI for 音乐表演 (ID: 130201) ===
+2024-11-25 03:41:03,600 - services.llm_service - DEBUG - Response content: 音乐表演专业薪资因地区、职位和经验而异。职业演奏家收入波动大，音乐教师相对稳定，剧院演员则视演出机会而定。初期薪资可能不高，但随着经验和知名度的提升，收入会有所增长。具体数字难以一概而论，建议参考行业调研数据或咨询业内前辈。热爱是关键，经济回报需长期积累。
+2024-11-25 03:41:03,600 - services.major_service - INFO - Successfully got answer for major 音乐表演
+2024-11-25 03:41:27,246 - services.major_service - INFO - Getting intro data for major 130201
+2024-11-25 03:41:27,273 - services.major_service - INFO - Found cached intro data for major 130201
+2024-11-25 03:41:27,273 - services.major_service - INFO - Processing question for major 音乐表演 (ID: 130201)
+2024-11-25 03:41:27,273 - services.major_service - DEBUG - Question: hello world 
+
+2024-11-25 03:41:27,274 - services.llm_service - INFO - 
+=== Sending question to ZhipuAI for 音乐表演 (ID: 130201) ===
+2024-11-25 03:41:27,274 - zhipuai.api_resource.chat.completions - DEBUG - temperature:0.7, top_p:NOT_GIVEN
+2024-11-25 03:41:27,274 - zhipuai.api_resource.chat.completions - DEBUG - temperature:0.7, top_p:NOT_GIVEN
+2024-11-25 03:41:27,275 - httpcore.connection - DEBUG - close.started
+2024-11-25 03:41:27,275 - httpcore.connection - DEBUG - close.complete
+2024-11-25 03:41:27,275 - httpcore.connection - DEBUG - connect_tcp.started host='open.bigmodel.cn' port=443 local_address=None timeout=8.0 socket_options=None
+2024-11-25 03:41:27,290 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x10e88e010>
+2024-11-25 03:41:27,291 - httpcore.connection - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x10e23f140> server_hostname='open.bigmodel.cn' timeout=8.0
+2024-11-25 03:41:27,321 - httpcore.connection - DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x10e88df10>
+2024-11-25 03:41:27,322 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2024-11-25 03:41:27,322 - httpcore.http11 - DEBUG - send_request_headers.complete
+2024-11-25 03:41:27,322 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2024-11-25 03:41:27,322 - httpcore.http11 - DEBUG - send_request_body.complete
+2024-11-25 03:41:27,322 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2024-11-25 03:41:29,072 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Sun, 24 Nov 2024 19:41:29 GMT'), (b'Content-Type', b'application/json; charset=UTF-8'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'Vary', b'Accept-Encoding'), (b'Vary', b'Origin'), (b'Vary', b'Access-Control-Request-Method'), (b'Vary', b'Access-Control-Request-Headers'), (b'X-LOG-ID', b'202411250341271a3d5e47f71f447e'), (b'Vary', b'Origin'), (b'Vary', b'Access-Control-Request-Method'), (b'Vary', b'Access-Control-Request-Headers'), (b'Strict-Transport-Security', b'max-age=31536000; includeSubDomains'), (b'Content-Encoding', b'gzip')])
+2024-11-25 03:41:29,073 - httpx - INFO - HTTP Request: POST https://open.bigmodel.cn/api/paas/v4/chat/completions "HTTP/1.1 200 OK"
+2024-11-25 03:41:29,073 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2024-11-25 03:41:29,073 - httpcore.http11 - DEBUG - receive_response_body.complete
+2024-11-25 03:41:29,074 - httpcore.http11 - DEBUG - response_closed.started
+2024-11-25 03:41:29,074 - httpcore.http11 - DEBUG - response_closed.complete
+2024-11-25 03:41:29,074 - zhipuai.core._http_client - DEBUG - HTTP Request: POST https://open.bigmodel.cn/api/paas/v4/chat/completions "200 OK"
+2024-11-25 03:41:29,076 - services.llm_service - INFO - 
+=== Received answer from ZhipuAI for 音乐表演 (ID: 130201) ===
+2024-11-25 03:41:29,076 - services.llm_service - DEBUG - Response content: 你好！音乐表演专业涉及声乐、器乐等，适合热爱音乐且有基础的同学。毕业后可做演奏家、音乐教师等。选择这个专业，要准备好迎接艺术挑战哦！加油！🎵🎤🎼
+2024-11-25 03:41:29,076 - services.major_service - INFO - Successfully got answer for major 音乐表演
+2024-11-25 03:41:51,523 - services.major_service - INFO - Getting intro data for major 130201
+2024-11-25 03:41:51,547 - services.major_service - INFO - Found cached intro data for major 130201
+2024-11-25 03:41:51,547 - services.major_service - INFO - Processing question for major 音乐表演 (ID: 130201)
+2024-11-25 03:41:51,548 - services.major_service - DEBUG - Question: can i marry someone rich
+
+2024-11-25 03:41:51,548 - services.llm_service - INFO - 
+=== Sending question to ZhipuAI for 音乐表演 (ID: 130201) ===
+2024-11-25 03:41:51,548 - zhipuai.api_resource.chat.completions - DEBUG - temperature:0.7, top_p:NOT_GIVEN
+2024-11-25 03:41:51,548 - zhipuai.api_resource.chat.completions - DEBUG - temperature:0.7, top_p:NOT_GIVEN
+2024-11-25 03:41:51,550 - httpcore.connection - DEBUG - close.started
+2024-11-25 03:41:51,550 - httpcore.connection - DEBUG - close.complete
+2024-11-25 03:41:51,550 - httpcore.connection - DEBUG - connect_tcp.started host='open.bigmodel.cn' port=443 local_address=None timeout=8.0 socket_options=None
+2024-11-25 03:41:51,566 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x10e88ea50>
+2024-11-25 03:41:51,566 - httpcore.connection - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x10e23f140> server_hostname='open.bigmodel.cn' timeout=8.0
+2024-11-25 03:41:51,603 - httpcore.connection - DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x10e8952d0>
+2024-11-25 03:41:51,604 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2024-11-25 03:41:51,604 - httpcore.http11 - DEBUG - send_request_headers.complete
+2024-11-25 03:41:51,604 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2024-11-25 03:41:51,604 - httpcore.http11 - DEBUG - send_request_body.complete
+2024-11-25 03:41:51,604 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2024-11-25 03:41:53,566 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Sun, 24 Nov 2024 19:41:53 GMT'), (b'Content-Type', b'application/json; charset=UTF-8'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'Vary', b'Accept-Encoding'), (b'Vary', b'Origin'), (b'Vary', b'Access-Control-Request-Method'), (b'Vary', b'Access-Control-Request-Headers'), (b'X-LOG-ID', b'20241125034151352cb481f6b14df2'), (b'Vary', b'Origin'), (b'Vary', b'Access-Control-Request-Method'), (b'Vary', b'Access-Control-Request-Headers'), (b'Strict-Transport-Security', b'max-age=31536000; includeSubDomains'), (b'Content-Encoding', b'gzip')])
+2024-11-25 03:41:53,566 - httpx - INFO - HTTP Request: POST https://open.bigmodel.cn/api/paas/v4/chat/completions "HTTP/1.1 200 OK"
+2024-11-25 03:41:53,567 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2024-11-25 03:41:53,567 - httpcore.http11 - DEBUG - receive_response_body.complete
+2024-11-25 03:41:53,567 - httpcore.http11 - DEBUG - response_closed.started
+2024-11-25 03:41:53,567 - httpcore.http11 - DEBUG - response_closed.complete
+2024-11-25 03:41:53,568 - zhipuai.core._http_client - DEBUG - HTTP Request: POST https://open.bigmodel.cn/api/paas/v4/chat/completions "200 OK"
+2024-11-25 03:41:53,569 - services.llm_service - INFO - 
+=== Received answer from ZhipuAI for 音乐表演 (ID: 130201) ===
+2024-11-25 03:41:53,569 - services.llm_service - DEBUG - Response content: 选择音乐表演专业主要看你对音乐的热爱和执着。能不能嫁给有钱人，和专业关系不大，更多取决于个人际遇和选择。专注提升自己，无论是专业技能还是综合素质，自然会吸引到志同道合的人。加油！🎵💪
+2024-11-25 03:41:53,570 - services.major_service - INFO - Successfully got answer for major 音乐表演
+2024-11-25 03:44:45,968 - services.major_service - INFO - Getting QA data for major 130201
+2024-11-25 03:44:46,008 - services.major_service - INFO - Found cached QA data for major 130201
+2024-11-25 03:44:46,009 - services.major_service - INFO - Getting intro data for major 130201
+2024-11-25 03:44:46,046 - services.major_service - INFO - Found cached intro data for major 130201
+2024-11-25 03:44:57,229 - services.major_service - INFO - Getting intro data for major 130201
+2024-11-25 03:44:57,256 - services.major_service - INFO - Found cached intro data for major 130201
+2024-11-25 03:44:57,256 - services.major_service - INFO - Processing question for major 音乐表演 (ID: 130201)
+2024-11-25 03:44:57,256 - services.major_service - DEBUG - Question: what's the best school
+
+2024-11-25 03:44:57,257 - services.llm_service - INFO - 
+=== Sending question to ZhipuAI for 音乐表演 (ID: 130201) ===
+2024-11-25 03:44:57,257 - zhipuai.api_resource.chat.completions - DEBUG - temperature:0.7, top_p:NOT_GIVEN
+2024-11-25 03:44:57,257 - zhipuai.api_resource.chat.completions - DEBUG - temperature:0.7, top_p:NOT_GIVEN
+2024-11-25 03:44:57,258 - httpcore.connection - DEBUG - close.started
+2024-11-25 03:44:57,258 - httpcore.connection - DEBUG - close.complete
+2024-11-25 03:44:57,258 - httpcore.connection - DEBUG - connect_tcp.started host='open.bigmodel.cn' port=443 local_address=None timeout=8.0 socket_options=None
+2024-11-25 03:44:57,308 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x10e896a50>
+2024-11-25 03:44:57,308 - httpcore.connection - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x10e23f140> server_hostname='open.bigmodel.cn' timeout=8.0
+2024-11-25 03:44:57,340 - httpcore.connection - DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x10e86abd0>
+2024-11-25 03:44:57,340 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2024-11-25 03:44:57,341 - httpcore.http11 - DEBUG - send_request_headers.complete
+2024-11-25 03:44:57,341 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2024-11-25 03:44:57,341 - httpcore.http11 - DEBUG - send_request_body.complete
+2024-11-25 03:44:57,341 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2024-11-25 03:44:59,923 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Sun, 24 Nov 2024 19:45:00 GMT'), (b'Content-Type', b'application/json; charset=UTF-8'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'Vary', b'Accept-Encoding'), (b'Vary', b'Origin'), (b'Vary', b'Access-Control-Request-Method'), (b'Vary', b'Access-Control-Request-Headers'), (b'X-LOG-ID', b'202411250344574734c56624694516'), (b'Vary', b'Origin'), (b'Vary', b'Access-Control-Request-Method'), (b'Vary', b'Access-Control-Request-Headers'), (b'Strict-Transport-Security', b'max-age=31536000; includeSubDomains'), (b'Content-Encoding', b'gzip')])
+2024-11-25 03:44:59,924 - httpx - INFO - HTTP Request: POST https://open.bigmodel.cn/api/paas/v4/chat/completions "HTTP/1.1 200 OK"
+2024-11-25 03:44:59,924 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2024-11-25 03:44:59,924 - httpcore.http11 - DEBUG - receive_response_body.complete
+2024-11-25 03:44:59,925 - httpcore.http11 - DEBUG - response_closed.started
+2024-11-25 03:44:59,925 - httpcore.http11 - DEBUG - response_closed.complete
+2024-11-25 03:44:59,925 - zhipuai.core._http_client - DEBUG - HTTP Request: POST https://open.bigmodel.cn/api/paas/v4/chat/completions "200 OK"
+2024-11-25 03:44:59,927 - services.llm_service - INFO - 
+=== Received answer from ZhipuAI for 音乐表演 (ID: 130201) ===
+2024-11-25 03:44:59,927 - services.llm_service - DEBUG - Response content: 选择音乐表演专业，中央音乐学院和上海音乐学院是国内顶尖之选，培养了郎朗、李云迪等大咖。具体哪所最适合你，还得看个人喜好和学校特色。建议多了解学校师资、课程设置和校园氛围，实地考察也很重要哦！热爱音乐，勇敢追梦吧！🎵🌟
+2024-11-25 03:44:59,927 - services.major_service - INFO - Successfully got answer for major 音乐表演
+2024-11-25 03:45:23,112 - werkzeug - WARNING -  * Debugger is active!
+2024-11-25 03:45:38,039 - services.major_service - INFO - Getting intro data for major 130201
+2024-11-25 03:45:38,066 - services.major_service - INFO - Found cached intro data for major 130201
+2024-11-25 03:45:38,066 - services.major_service - INFO - Processing question for major 音乐表演 (ID: 130201)
+2024-11-25 03:45:38,067 - services.llm_service - INFO - 
+=== Sending question to ZhipuAI for 音乐表演 (ID: 130201) ===
+2024-11-25 03:45:40,301 - httpx - INFO - HTTP Request: POST https://open.bigmodel.cn/api/paas/v4/chat/completions "HTTP/1.1 200 OK"
+2024-11-25 03:45:40,304 - services.llm_service - INFO - 
+=== Received answer from ZhipuAI for 音乐表演 (ID: 130201) ===
+2024-11-25 03:45:40,305 - services.major_service - INFO - Successfully got answer for major 音乐表演
+2024-11-25 03:47:47,719 - services.major_service - INFO - Getting intro data for major 130201
+2024-11-25 03:47:47,745 - services.major_service - INFO - Found cached intro data for major 130201
+2024-11-25 03:47:47,745 - services.major_service - INFO - Processing question for major 音乐表演 (ID: 130201)
+2024-11-25 03:47:47,745 - services.llm_service - INFO - 
+=== Sending question to ZhipuAI for 音乐表演 (ID: 130201) ===
+2024-11-25 03:47:50,605 - httpx - INFO - HTTP Request: POST https://open.bigmodel.cn/api/paas/v4/chat/completions "HTTP/1.1 200 OK"
+2024-11-25 03:47:50,609 - services.llm_service - INFO - 
+=== Received answer from ZhipuAI for 音乐表演 (ID: 130201) ===
+2024-11-25 03:47:50,609 - services.major_service - INFO - Successfully got answer for major 音乐表演
+2024-11-25 03:50:36,870 - werkzeug - WARNING -  * Debugger is active!
+2024-11-25 03:51:16,296 - werkzeug - WARNING -  * Debugger is active!

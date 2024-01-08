@@ -1,0 +1,67 @@
+2024-11-25 03:02:52,168 - werkzeug - WARNING -  * Debugger is active!
+2024-11-25 03:04:14,114 - werkzeug - WARNING -  * Debugger is active!
+2024-11-25 03:04:52,693 - services.llm_service - INFO - Sending QA request to ZhipuAI for major 130502
+2024-11-25 03:04:52,734 - services.llm_service - INFO - 
+=== Sending intro request to ZhipuAI for major 130502 ===
+2024-11-25 03:04:55,832 - httpx - INFO - HTTP Request: POST https://open.bigmodel.cn/api/paas/v4/chat/completions "HTTP/1.1 200 OK"
+2024-11-25 03:04:55,836 - services.llm_service - INFO - 
+=== Received intro response from ZhipuAI for major 130502 ===
+2024-11-25 03:04:55,836 - repositories.major_repository - INFO - === Starting save_major_intro for major 130502 ===
+2024-11-25 03:04:55,861 - repositories.major_repository - INFO - Successfully saved intro for major 130502
+2024-11-25 03:05:01,385 - httpx - INFO - HTTP Request: POST https://open.bigmodel.cn/api/paas/v4/chat/completions "HTTP/1.1 200 OK"
+2024-11-25 03:05:01,389 - services.llm_service - INFO - Received QA response from ZhipuAI for major 130502
+2024-11-25 03:05:01,389 - repositories.major_repository - INFO - === Starting save_major_qa for major 130502 ===
+2024-11-25 03:05:01,520 - repositories.major_repository - INFO - Total statements executed: 5
+2024-11-25 03:05:38,044 - services.llm_service - INFO - Sending QA request to ZhipuAI for major 130505
+2024-11-25 03:05:38,084 - services.llm_service - INFO - 
+=== Sending intro request to ZhipuAI for major 130505 ===
+2024-11-25 03:05:41,523 - httpx - INFO - HTTP Request: POST https://open.bigmodel.cn/api/paas/v4/chat/completions "HTTP/1.1 200 OK"
+2024-11-25 03:05:41,526 - services.llm_service - INFO - 
+=== Received intro response from ZhipuAI for major 130505 ===
+2024-11-25 03:05:41,526 - repositories.major_repository - INFO - === Starting save_major_intro for major 130505 ===
+2024-11-25 03:05:41,552 - repositories.major_repository - INFO - Successfully saved intro for major 130505
+2024-11-25 03:05:47,972 - httpx - INFO - HTTP Request: POST https://open.bigmodel.cn/api/paas/v4/chat/completions "HTTP/1.1 200 OK"
+2024-11-25 03:05:47,975 - services.llm_service - INFO - Received QA response from ZhipuAI for major 130505
+2024-11-25 03:05:47,975 - repositories.major_repository - INFO - === Starting save_major_qa for major 130505 ===
+2024-11-25 03:05:48,109 - repositories.major_repository - INFO - Total statements executed: 5
+2024-11-25 03:10:30,522 - services.llm_service - INFO - Sending QA request to ZhipuAI for major 130508
+2024-11-25 03:10:30,568 - services.llm_service - INFO - 
+=== Sending intro request to ZhipuAI for major 130508 ===
+2024-11-25 03:10:34,193 - httpx - INFO - HTTP Request: POST https://open.bigmodel.cn/api/paas/v4/chat/completions "HTTP/1.1 200 OK"
+2024-11-25 03:10:34,195 - services.llm_service - INFO - 
+=== Received intro response from ZhipuAI for major 130508 ===
+2024-11-25 03:10:34,195 - repositories.major_repository - INFO - === Starting save_major_intro for major 130508 ===
+2024-11-25 03:10:34,219 - repositories.major_repository - INFO - Successfully saved intro for major 130508
+2024-11-25 03:10:39,112 - httpx - INFO - HTTP Request: POST https://open.bigmodel.cn/api/paas/v4/chat/completions "HTTP/1.1 200 OK"
+2024-11-25 03:10:39,115 - services.llm_service - INFO - Received QA response from ZhipuAI for major 130508
+2024-11-25 03:10:39,116 - repositories.major_repository - INFO - === Starting save_major_qa for major 130508 ===
+2024-11-25 03:10:39,245 - repositories.major_repository - INFO - Total statements executed: 5
+2024-11-25 03:11:10,308 - werkzeug - WARNING -  * Debugger is active!
+2024-11-25 03:12:50,341 - werkzeug - WARNING -  * Debugger is active!
+2024-11-25 03:12:58,186 - werkzeug - WARNING -  * Debugger is active!
+2024-11-25 03:13:02,078 - werkzeug - WARNING -  * Debugger is active!
+2024-11-25 03:13:20,049 - werkzeug - WARNING -  * Debugger is active!
+2024-11-25 03:13:42,094 - werkzeug - WARNING -  * Debugger is active!
+2024-11-25 03:13:56,018 - werkzeug - WARNING -  * Debugger is active!
+2024-11-25 03:14:07,047 - werkzeug - WARNING -  * Debugger is active!
+2024-11-25 03:18:36,390 - werkzeug - WARNING -  * Debugger is active!
+2024-11-25 03:18:43,313 - werkzeug - WARNING -  * Debugger is active!
+2024-11-25 03:22:15,906 - werkzeug - WARNING -  * Debugger is active!
+2024-11-25 03:23:58,811 - services.llm_service - INFO - 
+=== Sending QA request to ZhipuAI for major 130101 ===
+2024-11-25 03:23:58,843 - services.llm_service - INFO - 
+=== Sending intro request to ZhipuAI for major 130101 ===
+2024-11-25 03:24:02,208 - httpx - INFO - HTTP Request: POST https://open.bigmodel.cn/api/paas/v4/chat/completions "HTTP/1.1 200 OK"
+2024-11-25 03:24:02,213 - services.llm_service - INFO - 
+=== Received intro response from ZhipuAI for major 130101 ===
+2024-11-25 03:24:02,213 - repositories.major_repository - INFO - === Starting save_major_intro for major 130101 ===
+2024-11-25 03:24:02,238 - repositories.major_repository - INFO - Successfully saved intro for major 130101
+2024-11-25 03:24:07,369 - httpx - INFO - HTTP Request: POST https://open.bigmodel.cn/api/paas/v4/chat/completions "HTTP/1.1 200 OK"
+2024-11-25 03:24:07,372 - services.llm_service - INFO - 
+=== Received QA response from ZhipuAI for major 130101 ===
+2024-11-25 03:24:07,372 - repositories.major_repository - INFO - === Starting save_major_qa for major 130101 ===
+2024-11-25 03:24:07,498 - repositories.major_repository - INFO - Total statements executed: 5
+2024-11-25 03:27:37,991 - werkzeug - WARNING -  * Debugger is active!
+2024-11-25 03:27:49,896 - werkzeug - WARNING -  * Debugger is active!
+2024-11-25 03:27:56,970 - werkzeug - WARNING -  * Debugger is active!
+2024-11-25 03:28:08,024 - werkzeug - WARNING -  * Debugger is active!

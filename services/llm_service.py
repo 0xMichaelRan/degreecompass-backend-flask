@@ -54,7 +54,7 @@ class LLMService:
         prompt = get_major_intro_prompt(major_info)
 
         logger.info(
-            f"Sending intro request to ZhipuAI for major {major_info['major_id']}"
+            f"\n=== Sending intro request to ZhipuAI for major {major_info['major_id']} ==="
         )
 
         try:
@@ -82,7 +82,7 @@ class LLMService:
         try:
             prompt = get_major_ask_prompt(context, question)
 
-            logger.info(f"Sending question to ZhipuAI for major {context['major_id']}")
+            logger.info(f"\n=== Sending question to ZhipuAI for major {context['major_id']} ===")
 
             response = self.client.chat.completions.create(
                 model=os.getenv("ZHIPUAI_MODEL"),

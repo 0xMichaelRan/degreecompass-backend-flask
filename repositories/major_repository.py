@@ -95,7 +95,7 @@ class MajorRepository:
     @staticmethod
     def save_major_qa(major_id, qa_sql_statements):
         try:
-            logger.info(f"=== Starting save_major_qa for major {major_id} ===")
+            logger.info(f"\n=== Starting save_major_qa for major {major_id} ===")
 
             # First delete existing QA
             DatabaseService.execute_query(
@@ -160,7 +160,7 @@ class MajorRepository:
     @staticmethod
     def save_major_intro(major_id, intro_content):
         try:
-            logger.info(f"=== Starting save_major_intro for major {major_id} ===")
+            logger.info(f"\n=== Starting save_major_intro for major {major_id} ===")
             
             # Save or update intro content
             result = DatabaseService.execute_single_query(

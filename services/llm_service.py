@@ -77,3 +77,37 @@ class LLMService:
                 f"Error calling ZhipuAI for major {major_info['major_id']}: {str(e)}"
             )
             raise
+
+    def ask_major_question(self, question, context):
+        try:
+            prompt = f"""
+Based on the following context about a major:
+Major Name: {context['major_name']}
+Major ID: {context['major_id']}
+Introduction: {context['intro_content']}
+
+Question: {question}
+
+Please provide a helpful and accurate answer based on the above context. If the question cannot be fully answered based on the provided context, please indicate that and provide general guidance related to the major. Within 100 Chinese characters.
+            """
+
+            logger.info(f"Sending question to ZhipuAI for major {context['major_id']}")
+
+            response = self.client.chat.completions.create(
+                model=os.getenv("ZHIPUAI_MODEL"),
+                messages=[
+                    {"role": "system", "content": "You are a helpful academic advisor who specializes in providing information about college majors and career paths."},
+                    {"role": "user", "content": prompt}
+                ],
+                temperature=0.7,
+            )
+
+            content = response.choices[0].message.content
+            logger.info(f"Received answer from ZhipuAI for major {context['major_id']}")
+            logger.debug(f"Response content: {content}")
+
+            return content
+
+        except Exception as e:
+            logger.error(f"Error calling ZhipuAI for major {context['major_id']}: {str(e)}")
+            raise

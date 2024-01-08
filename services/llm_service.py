@@ -80,16 +80,7 @@ class LLMService:
 
     def ask_major_question(self, question, context):
         try:
-            prompt = f"""
-Based on the following context about a major:
-Major Name: {context['major_name']}
-Major ID: {context['major_id']}
-Introduction: {context['intro_content']}
-
-Question: {question}
-
-Please provide a helpful and accurate answer based on the above context. If the question cannot be fully answered based on the provided context, please indicate that and provide general guidance related to the major. Within 100 Chinese characters.
-            """
+            prompt = get_major_ask_prompt(context, question)
 
             logger.info(f"Sending question to ZhipuAI for major {context['major_id']}")
 

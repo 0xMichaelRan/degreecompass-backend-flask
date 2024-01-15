@@ -638,3 +638,24 @@ INSERT INTO major_qa (major_id, question, answer) VALUES ('130204', '读舞蹈�
 2024-11-25 04:08:06,713 - services.major_service - INFO - Found cached intro data for major 130205
 2024-11-25 04:08:06,716 - services.db_service - INFO - Query executed successfully, returned 6 rows
 2024-11-25 04:08:06,806 - services.db_service - INFO - Query executed successfully, returned 6 rows
+2024-11-25 04:47:21,151 - werkzeug - WARNING -  * Debugger is active!
+2024-11-25 04:51:09,646 - routes.major_routes - INFO - Searching majors with keyword: '计算', page: 1
+2024-11-25 04:51:09,647 - services.major_service - INFO - Searching majors with keyword: '计算', page: 1, page_size: 18
+2024-11-25 04:51:09,695 - services.db_service - INFO - Query executed successfully, returned 3 rows
+2024-11-25 04:51:09,718 - services.major_service - INFO - Found 3 majors matching '计算'
+2024-11-25 04:51:09,718 - routes.major_routes - INFO - Search completed, found 3 results
+2024-11-25 04:51:10,621 - routes.major_routes - INFO - Searching majors with keyword: '计', page: 1
+2024-11-25 04:51:10,621 - services.major_service - INFO - Searching majors with keyword: '计', page: 1, page_size: 18
+2024-11-25 04:51:10,648 - services.db_service - INFO - Query executed successfully, returned 18 rows
+2024-11-25 04:51:10,670 - services.major_service - INFO - Found 21 majors matching '计'
+2024-11-25 04:51:10,670 - routes.major_routes - INFO - Search completed, found 18 results
+2024-11-25 04:51:14,415 - services.db_service - INFO - Query executed successfully, returned 12 rows
+2024-11-25 04:51:14,416 - services.db_service - INFO - Query executed successfully, returned 12 rows
+2024-11-25 04:51:15,857 - services.db_service - INFO - Query executed successfully, returned 4 rows
+2024-11-25 04:51:16,000 - services.db_service - INFO - Query executed successfully, returned 12 rows
+2024-11-25 04:51:16,000 - services.db_service - INFO - Query executed successfully, returned 12 rows
+2024-11-25 04:51:18,576 - services.db_service - INFO - Query executed successfully, returned 4 rows
+2024-11-25 04:51:19,889 - services.db_service - INFO - Query executed successfully, returned 17 rows
+2024-11-25 04:51:20,943 - services.db_service - INFO - Query executed successfully, returned 4 rows
+2024-11-25 04:51:21,978 - services.db_service - INFO - Query executed successfully, returned 18 rows
+2024-11-25 04:51:23,439 - services.db_service - INFO - Query executed successfully, returned 18 rows

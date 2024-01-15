@@ -1,0 +1,68 @@
+2024-11-25 13:57:48,985 - werkzeug - WARNING -  * Debugger is active!
+2024-11-25 13:58:11,503 - services.db_service - INFO - Query executed successfully, returned 12 rows
+2024-11-25 13:58:11,600 - services.db_service - INFO - Query executed successfully, returned 18 rows
+2024-11-25 14:19:47,265 - services.major_service - INFO - Getting QA data for major 010103K
+2024-11-25 14:19:47,305 - services.db_service - INFO - Query executed successfully, returned 0 rows
+2024-11-25 14:19:47,306 - services.major_service - INFO - No cached QA found for major 010103K, generating new content
+2024-11-25 14:19:47,308 - services.major_service - INFO - Getting intro data for major 010103K
+2024-11-25 14:19:47,346 - services.llm_service - INFO - 
+=== Sending QA request to ZhipuAI for 宗教学 (ID: 010103K) ===
+2024-11-25 14:19:47,346 - services.db_service - INFO - Query executed successfully, returned 4 rows
+2024-11-25 14:19:47,346 - services.major_service - INFO - No cached intro found for major 010103K, generating new content
+2024-11-25 14:19:47,382 - services.llm_service - INFO - 
+=== Sending intro request to ZhipuAI for 宗教学 (ID: 010103K) ===
+2024-11-25 14:19:47,408 - services.db_service - INFO - Query executed successfully, returned 4 rows
+2024-11-25 14:19:51,216 - httpx - INFO - HTTP Request: POST https://open.bigmodel.cn/api/paas/v4/chat/completions "HTTP/1.1 200 OK"
+2024-11-25 14:19:51,220 - services.llm_service - INFO - 
+=== Received intro response from ZhipuAI for 宗教学 (ID: 010103K) ===
+2024-11-25 14:19:51,221 - repositories.major_repository - INFO - 
+=== Starting save_major_intro for major 010103K ===
+2024-11-25 14:19:51,250 - repositories.major_repository - INFO - Successfully saved intro for major 010103K
+2024-11-25 14:19:58,615 - httpx - INFO - HTTP Request: POST https://open.bigmodel.cn/api/paas/v4/chat/completions "HTTP/1.1 200 OK"
+2024-11-25 14:19:58,618 - services.llm_service - INFO - 
+=== Received QA response from ZhipuAI for 宗教学 (ID: 010103K) ===
+2024-11-25 14:19:58,618 - repositories.major_repository - INFO - 
+=== Starting save_major_qa for major 010103K ===
+2024-11-25 14:19:58,640 - services.db_service - INFO - Query executed successfully, returned 0 rows
+2024-11-25 14:19:58,665 - services.db_service - INFO - Query executed successfully, returned 1 rows
+2024-11-25 14:19:58,690 - services.db_service - INFO - Query executed successfully, returned 1 rows
+2024-11-25 14:19:58,715 - services.db_service - INFO - Query executed successfully, returned 1 rows
+2024-11-25 14:19:58,739 - services.db_service - INFO - Query executed successfully, returned 1 rows
+2024-11-25 14:19:58,763 - services.db_service - INFO - Query executed successfully, returned 1 rows
+2024-11-25 14:19:58,764 - repositories.major_repository - INFO - Total statements executed: 5
+2024-11-25 14:19:58,789 - services.db_service - INFO - Query executed successfully, returned 5 rows
+2024-11-25 14:20:47,152 - services.db_service - INFO - Query executed successfully, returned 12 rows
+2024-11-25 14:20:47,209 - services.db_service - INFO - Query executed successfully, returned 12 rows
+2024-11-25 14:20:47,242 - services.db_service - INFO - Query executed successfully, returned 18 rows
+2024-11-25 14:20:47,379 - services.db_service - INFO - Query executed successfully, returned 18 rows
+2024-11-25 14:20:49,030 - services.db_service - INFO - Query executed successfully, returned 6 rows
+2024-11-25 14:20:49,520 - services.db_service - INFO - Query executed successfully, returned 12 rows
+2024-11-25 14:20:49,555 - services.db_service - INFO - Query executed successfully, returned 12 rows
+2024-11-25 14:20:49,592 - services.db_service - INFO - Query executed successfully, returned 6 rows
+2024-11-25 14:20:49,664 - services.db_service - INFO - Query executed successfully, returned 6 rows
+2024-11-25 14:20:51,280 - services.db_service - INFO - Query executed successfully, returned 18 rows
+2024-11-25 14:20:52,602 - services.major_service - INFO - Getting QA data for major 080401
+2024-11-25 14:20:52,678 - services.db_service - INFO - Query executed successfully, returned 5 rows
+2024-11-25 14:20:52,678 - services.major_service - INFO - Found cached QA data for major 080401
+2024-11-25 14:20:52,690 - services.major_service - INFO - Getting intro data for major 080401
+2024-11-25 14:20:52,749 - services.db_service - INFO - Query executed successfully, returned 12 rows
+2024-11-25 14:20:52,750 - services.major_service - INFO - Found cached intro data for major 080401
+2024-11-25 14:20:52,819 - services.db_service - INFO - Query executed successfully, returned 12 rows
+2024-11-25 18:04:44,440 - services.major_service - INFO - Getting QA data for major 050102
+2024-11-25 18:04:44,470 - services.db_service - INFO - Query executed successfully, returned 0 rows
+2024-11-25 18:04:44,470 - services.major_service - INFO - No cached QA found for major 050102, generating new content
+2024-11-25 18:04:44,497 - services.llm_service - INFO - 
+=== Sending QA request to ZhipuAI for 汉语言 (ID: 050102) ===
+2024-11-25 18:04:54,884 - httpx - INFO - HTTP Request: POST https://open.bigmodel.cn/api/paas/v4/chat/completions "HTTP/1.1 200 OK"
+2024-11-25 18:04:54,889 - services.llm_service - INFO - 
+=== Received QA response from ZhipuAI for 汉语言 (ID: 050102) ===
+2024-11-25 18:04:54,889 - repositories.major_repository - INFO - 
+=== Starting save_major_qa for major 050102 ===
+2024-11-25 18:04:54,913 - services.db_service - INFO - Query executed successfully, returned 0 rows
+2024-11-25 18:04:54,939 - services.db_service - INFO - Query executed successfully, returned 1 rows
+2024-11-25 18:04:54,962 - services.db_service - INFO - Query executed successfully, returned 1 rows
+2024-11-25 18:04:54,987 - services.db_service - INFO - Query executed successfully, returned 1 rows
+2024-11-25 18:04:55,010 - services.db_service - INFO - Query executed successfully, returned 1 rows
+2024-11-25 18:04:55,032 - services.db_service - INFO - Query executed successfully, returned 1 rows
+2024-11-25 18:04:55,032 - repositories.major_repository - INFO - Total statements executed: 5
+2024-11-25 18:04:55,057 - services.db_service - INFO - Query executed successfully, returned 5 rows

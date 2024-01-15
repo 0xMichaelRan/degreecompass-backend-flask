@@ -1,8 +1,9 @@
 version: '3.8'
 
+name: degree-compass
 services:
   postgres:
-    image: postgres:14.13-alpine3.20
+    image: postgres:latest
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres

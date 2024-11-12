@@ -6,6 +6,7 @@ Use poetry to manage dependencies:
 poetry new flask-degree-compass
 cd flask-degree-compass
 poetry add flask
+vi app.py
 poetry run flask run
 ```
 

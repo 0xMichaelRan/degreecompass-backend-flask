@@ -14,5 +14,6 @@ app.register_blueprint(major_bp, url_prefix='/api')
 
 if __name__ == '__main__':
     # Get the API port from environment variables, default to 5000 if not set
-    port = int(os.getenv('BACKEND_PORT', 5000))
+    port = int(os.getenv('BACKEND_PORT', 5001))
+    print(f"Running on port: {port}")
     app.run(debug=True, port=port)

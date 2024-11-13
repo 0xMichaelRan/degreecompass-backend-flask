@@ -97,5 +97,5 @@ CREATE TABLE majors (
             f.write(major_sql + '\n')
 
 # Usage
-sql_statements = parse_major_data('data/major_data.txt')
-write_sql_file(sql_statements, 'data/output_sql2.sql')
+sql_statements = parse_major_data('./data/major_data.txt')
+write_sql_file(sql_statements, './data/output_major_data.sql')

@@ -1,6 +1,9 @@
+from services.llm_service import LLMService
+
 class MajorService:
     def __init__(self, repository):
         self.repository = repository
+        self.llm_service = LLMService()
 
     def get_paginated_response(self, items, count, page, page_size):
         return {
@@ -30,4 +33,23 @@ class MajorService:
         major = self.repository.get_major_by_id(major_id)
         if not major:
             raise ValueError('Major not found')
-        return major 
+        return major
+
+    def get_major_qa(self, major_id):
+        # First check if we have cached QA
+        qa_data = self.repository.get_major_qa(major_id)
+        
+        if qa_data:
+            return qa_data
+            
+        # If no cached data, get major info and generate QA
+        major_info = self.repository.get_major_by_id(major_id)
+        if not major_info:
+            raise ValueError('Major not found')
+            
+        # Generate QA using LLM
+        qa_content = self.llm_service.get_major_qa(major_info)
+        
+        # Save and return the QA content
+        return self.repository.save_major_qa(major_id, qa_content)
+  

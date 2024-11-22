@@ -6,7 +6,7 @@ load_dotenv()
 
 class LLMService:
     def __init__(self):
-        zhipuai.api_key = os.getenv('ZHIPUAI_API_KEY')
+        self.client = zhipuai.ZhipuAI(api_key=os.getenv('ZHIPUAI_API_KEY'))
         
     def get_major_qa(self, major_info):
         prompt = f"""
@@ -26,13 +26,12 @@ class LLMService:
         请用清晰的问答格式回答。
         """
 
-        response = zhipuai.model_api.invoke(
+        response = self.client.chat.completions.create(
             model="glm-4-plus",
-            prompt=[{"role": "user", "content": prompt}],
+            messages=[
+                {"role": "user", "content": prompt}
+            ],
             temperature=0.7,
         )
         
-        if response['code'] == 200:
-            return response['data']['choices'][0]['content']
-        else:
-            raise Exception(f"LLM API Error: {response['msg']}")
+        return response.choices[0].message.content

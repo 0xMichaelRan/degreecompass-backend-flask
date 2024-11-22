@@ -83,4 +83,24 @@ class MajorRepository:
             WHERE m.major_id = %s
             ''',
             (major_id,)
-        ) 
+        )
+
+    @staticmethod
+    def save_major_qa(major_id, qa_content):
+        return DatabaseService.execute_query(
+            '''
+            INSERT INTO major_qa (major_id, qa_content)
+            VALUES (%s, %s)
+            ON CONFLICT (major_id) 
+            DO UPDATE SET qa_content = EXCLUDED.qa_content, updated_at = CURRENT_TIMESTAMP
+            RETURNING *
+            ''',
+            (major_id, qa_content)
+        )
+
+    @staticmethod
+    def get_major_qa(major_id):
+        return DatabaseService.execute_single_query(
+            'SELECT * FROM major_qa WHERE major_id = %s',
+            (major_id,)
+        )

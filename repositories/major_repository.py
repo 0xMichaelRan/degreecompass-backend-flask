@@ -88,31 +88,57 @@ class MajorRepository:
     @staticmethod
     def save_major_qa(major_id, qa_sql_statements):
         try:
+            print("\n=== Starting save_major_qa operation ===")
+            print(f"Major ID: {major_id}")
+            
             # First delete existing QA
             DatabaseService.execute_query(
-                'DELETE FROM major_qa WHERE major_id = %s',
+                'DELETE FROM major_qa WHERE major_id = %s RETURNING id',
                 (major_id,)
             )
             
-            # Execute each INSERT statement
+            # Parse and execute INSERT statements
             executed_count = 0
             for sql_statement in qa_sql_statements.strip().split('\n'):
                 if sql_statement.strip():
-                    DatabaseService.execute_query(sql_statement)
+                    # Extract values from SQL statement
+                    values_part = sql_statement.split('VALUES')[1].strip().strip(';').strip('(').strip(')')
+                    major_id, question, answer = [v.strip().strip("'") for v in values_part.split(',', 2)]
+                    
+                    # Use parameterized query instead of raw SQL
+                    DatabaseService.execute_query(
+                        '''
+                        INSERT INTO major_qa (major_id, question, answer) 
+                        VALUES (%s, %s, %s) RETURNING id
+                        ''',
+                        (major_id, question, answer)
+                    )
                     executed_count += 1
             
-            print(f"Executed {executed_count} INSERT statements for major {major_id}")
+            print(f"\nTotal statements executed: {executed_count}")
             
             # Return all QA for this major
             result = DatabaseService.execute_query(
-                'SELECT * FROM major_qa WHERE major_id = %s ORDER BY id',
+                '''
+                SELECT id, major_id, question, answer, 
+                       created_at, updated_at 
+                FROM major_qa 
+                WHERE major_id = %s 
+                ORDER BY id
+                ''',
                 (major_id,)
             )
-            print(f"Retrieved {len(result)} QA pairs for major {major_id}")
+            
+            if not result:
+                return []
+            
             return result
             
         except Exception as e:
-            print(f"Error in save_major_qa for major {major_id}: {str(e)}")
+            print("\n!!! Error in save_major_qa !!!")
+            print(f"Major ID: {major_id}")
+            print(f"Error type: {type(e).__name__}")
+            print(f"Error message: {str(e)}")
             raise
 
     @staticmethod

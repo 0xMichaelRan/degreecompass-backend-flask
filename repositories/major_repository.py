@@ -1,4 +1,5 @@
 from services.db_service import DatabaseService
+from services.sql_parser_service import SQLParserService
 
 
 class MajorRepository:
@@ -91,37 +92,29 @@ class MajorRepository:
     @staticmethod
     def save_major_qa(major_id, qa_sql_statements):
         try:
-            print("\n=== Starting save_major_qa operation ===")
-            print(f"Major ID: {major_id}")
+            print(f"\n=== Starting save_major_qa for major {major_id} ===")
 
             # First delete existing QA
             DatabaseService.execute_query(
-                "DELETE FROM major_qa WHERE major_id = %s RETURNING id", (major_id,)
+                "DELETE FROM major_qa WHERE major_id = %s RETURNING id", 
+                (major_id,)
             )
 
             # Parse and execute INSERT statements
             executed_count = 0
             for sql_statement in qa_sql_statements.strip().split("\n"):
-                if sql_statement.strip():
-                    # Extract values from SQL statement
-                    values_part = (
-                        sql_statement.split("VALUES")[1]
-                        .strip()
-                        .strip(";")
-                        .strip("(")
-                        .strip(")")
-                    )
-                    major_id, question, answer = [
-                        v.strip().strip("'") for v in values_part.split(",", 2)
-                    ]
-
-                    # Use parameterized query instead of raw SQL
+                parsed_values = SQLParserService.parse_qa_values(sql_statement)
+                if parsed_values:
                     DatabaseService.execute_query(
                         """
                         INSERT INTO major_qa (major_id, question, answer) 
                         VALUES (%s, %s, %s) RETURNING id
                         """,
-                        (major_id, question, answer),
+                        (
+                            parsed_values['major_id'], 
+                            parsed_values['question'], 
+                            parsed_values['answer']
+                        ),
                     )
                     executed_count += 1
 
@@ -139,10 +132,7 @@ class MajorRepository:
                 (major_id,),
             )
 
-            if not result:
-                return []
-
-            return result
+            return result or []
 
         except Exception as e:
             print("\n!!! Error in save_major_qa !!!")
@@ -167,17 +157,36 @@ class MajorRepository:
 
     @staticmethod
     def save_major_intro(major_id, intro_content):
-        result = DatabaseService.execute_single_query(
-            """
-            INSERT INTO major_intro (major_id, intro_content)
-            VALUES (%s, %s)
-            ON CONFLICT (major_id) 
-            DO UPDATE SET intro_content = EXCLUDED.intro_content, updated_at = CURRENT_TIMESTAMP
-            RETURNING *
-            """,
-            (major_id, intro_content),
-        )
-        return result
+        try:
+            print(f"\n=== Starting save_major_intro for major {major_id} ===")
+            
+            # Save or update intro content
+            result = DatabaseService.execute_single_query(
+                """
+                INSERT INTO major_intro (major_id, intro_content)
+                VALUES (%s, %s)
+                ON CONFLICT (major_id) 
+                DO UPDATE SET 
+                    intro_content = EXCLUDED.intro_content, 
+                    updated_at = CURRENT_TIMESTAMP
+                RETURNING *
+                """,
+                (major_id, intro_content),
+            )
+            
+            print(f"Successfully saved intro for major {major_id}")
+            
+            if not result:
+                return None
+            
+            return result
+            
+        except Exception as e:
+            print("\n!!! Error in save_major_intro !!!")
+            print(f"Major ID: {major_id}")
+            print(f"Error type: {type(e).__name__}")
+            print(f"Error message: {str(e)}")
+            raise
 
     @staticmethod
     def get_major_intro(major_id):

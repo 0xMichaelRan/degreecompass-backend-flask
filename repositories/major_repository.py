@@ -86,18 +86,23 @@ class MajorRepository:
         )
 
     @staticmethod
-    def save_major_qa(major_id, qa_content):
-        result = DatabaseService.execute_single_query(
-            '''
-            INSERT INTO major_qa (major_id, qa_content)
-            VALUES (%s, %s)
-            ON CONFLICT (major_id) 
-            DO UPDATE SET qa_content = EXCLUDED.qa_content, updated_at = CURRENT_TIMESTAMP
-            RETURNING *
-            ''',
-            (major_id, qa_content)
+    def save_major_qa(major_id, qa_sql_statements):
+        # First delete existing QA for this major
+        DatabaseService.execute_query(
+            'DELETE FROM major_qa WHERE major_id = %s',
+            (major_id,)
         )
-        return result
+        
+        # Execute each INSERT statement
+        for sql_statement in qa_sql_statements.strip().split(';'):
+            if sql_statement.strip():
+                DatabaseService.execute_query(sql_statement)
+        
+        # Return all QA for this major
+        return DatabaseService.execute_query(
+            'SELECT * FROM major_qa WHERE major_id = %s ORDER BY id',
+            (major_id,)
+        )
 
     @staticmethod
     def get_major_qa(major_id):

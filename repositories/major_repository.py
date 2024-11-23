@@ -153,9 +153,17 @@ class MajorRepository:
 
     @staticmethod
     def get_major_qa(major_id):
-        return DatabaseService.execute_single_query(
-            "SELECT * FROM major_qa WHERE major_id = %s", (major_id,)
+        result = DatabaseService.execute_query(
+            """
+            SELECT id, major_id, question, answer, 
+                   created_at, updated_at 
+            FROM major_qa 
+            WHERE major_id = %s 
+            ORDER BY id
+            """,
+            (major_id,),
         )
+        return result or []
 
     @staticmethod
     def save_major_intro(major_id, intro_content):

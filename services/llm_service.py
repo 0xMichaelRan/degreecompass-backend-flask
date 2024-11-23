@@ -23,28 +23,33 @@ class LLMService:
         4. 这个专业需要什么特质或能力？
         5. 这个专业的发展前景如何？
 
-        请按照以下格式返回SQL语句（一行一个INSERT）：
-        INSERT INTO major_qa (major_id, question, answer) VALUES 
-        ('专业ID', '问题1', '答案1');
-        INSERT INTO major_qa (major_id, question, answer) VALUES 
-        ('专业ID', '问题2', '答案2');
+        请严格按照以下格式返回SQL语句（每个INSERT必须在单独一行）：
+        INSERT INTO major_qa (major_id, question, answer) VALUES ('{major_info['major_id']}', '这个专业主要学什么？', '答案1');
+        INSERT INTO major_qa (major_id, question, answer) VALUES ('{major_info['major_id']}', '这个专业的主要课程有哪些？', '答案2');
 
         注意：
-        1. 专业ID为：{major_info['major_id']}
-        2. 答案需要用单引号包裹，如果答案中包含单引号，请使用两个单引号转义
+        1. 每个INSERT语句必须单独一行
+        2. 答案中如有单引号需要用两个单引号转义
         3. 每个答案控制在100-200字之间
-        4. 不要包含markdown格式
+        4. 不要包含markdown格式或其他额外内容
         """
 
         response = self.client.chat.completions.create(
             model=os.getenv('ZHIPUAI_MODEL'),
-            messages=[
-                {"role": "user", "content": prompt}
-            ],
+            messages=[{"role": "user", "content": prompt}],
             temperature=0.7,
         )
         
-        return response.choices[0].message.content
+        content = response.choices[0].message.content
+        print(f"LLM Response for major {major_info['major_id']}:")
+        print(content)
+        
+        # Validate SQL syntax
+        if not all(line.strip().startswith('INSERT INTO major_qa') 
+                  for line in content.strip().split('\n') if line.strip()):
+            raise ValueError("Invalid SQL format in LLM response")
+        
+        return content
 
     def get_major_intro(self, major_info):
         prompt = get_major_intro_prompt(major_info)

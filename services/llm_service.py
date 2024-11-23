@@ -50,7 +50,7 @@ class LLMService:
 
         预期薪资：在【{major_info['major_name']}】领域工作的毕业生一般可以期待怎样的起薪和职业发展薪资水平？
 
-        请确保您的回答采用正式的书面表达方式并使用合适的Markdown格式。谢谢。
+        尽量使用间断的条目形式，控制总字数在200字以内。谢谢。
         """
 
         response = self.client.chat.completions.create(

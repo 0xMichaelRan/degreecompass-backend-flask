@@ -1,6 +1,9 @@
 from flask import Blueprint, jsonify, request
 from services.major_service import MajorService
 from repositories.major_repository import MajorRepository
+import logging
+
+logger = logging.getLogger(__name__)
 
 major_bp = Blueprint('major', __name__)
 major_service = MajorService(MajorRepository())
@@ -99,18 +102,14 @@ def ask_major_question(major_id):
 def search_majors():
     try:
         keyword = request.args.get('keyword', '')
-        if not keyword:
-            return jsonify({'data': [], 'pagination': {
-                'page': 1,
-                'page_size': 0,
-                'total_count': 0,
-                'total_pages': 0
-            }}), 200
-            
-        page = max(int(request.args.get('page', 1)), 1)
-        page_size = int(request.args.get('page_size', 28))
+        page = int(request.args.get('page', 1))
+        page_size = int(request.args.get('page_size', 10))
         
+        logger.info(f"Searching majors with keyword: '{keyword}', page: {page}")
         result = major_service.search_majors(keyword, page, page_size)
-        return jsonify(result), 200
+        logger.info(f"Search completed, found {len(result['data'])} results")
+        
+        return jsonify(result)
     except Exception as e:
+        logger.error(f"Error in search_majors: {str(e)}")
         return jsonify({'error': str(e)}), 500

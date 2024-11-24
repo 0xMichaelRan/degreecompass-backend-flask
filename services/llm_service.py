@@ -14,7 +14,9 @@ class LLMService:
 
     def get_major_qa(self, major_info):
         major_id = major_info["major_id"]
-        logger.info(f"\n=== Sending QA request to ZhipuAI for major {major_id} ===")
+        major_name = major_info["major_name"]
+
+        logger.info(f"\n=== Sending QA request to ZhipuAI for {major_name} (ID: {major_id}) ===")
 
         prompt = get_major_qa_prompt(major_info)
 
@@ -27,7 +29,7 @@ class LLMService:
 
             content = response.choices[0].message.content
             logger.info(
-                f"\n=== Received QA response from ZhipuAI for major {major_id} ==="
+                f"\n=== Received QA response from ZhipuAI for {major_name} (ID: {major_id}) ==="
             )
             logger.debug(f"Response content: {content}")
 
@@ -37,14 +39,14 @@ class LLMService:
                 for line in content.strip().split("\n")
                 if line.strip()
             ):
-                logger.error(f"Invalid SQL format in LLM response for major {major_id}")
+                logger.error(f"Invalid SQL format in LLM response for {major_name} (ID: {major_id})")
                 raise ValueError("Invalid SQL format in LLM response")
 
             return content
 
         except Exception as e:
             logger.error(
-                f"\n=== Error calling ZhipuAI for major {major_id}: {str(e)} ==="
+                f"\n=== Error calling ZhipuAI for {major_name} (ID: {major_id}): {str(e)} ==="
             )
             raise
 
@@ -52,7 +54,7 @@ class LLMService:
         prompt = get_major_intro_prompt(major_info)
 
         logger.info(
-            f"\n=== Sending intro request to ZhipuAI for major {major_info['major_id']} ==="
+            f"\n=== Sending intro request to ZhipuAI for {major_info['major_name']} (ID: {major_info['major_id']}) ==="
         )
 
         try:
@@ -64,7 +66,7 @@ class LLMService:
 
             content = response.choices[0].message.content
             logger.info(
-                f"\n=== Received intro response from ZhipuAI for major {major_info['major_id']} ==="
+                f"\n=== Received intro response from ZhipuAI for {major_info['major_name']} (ID: {major_info['major_id']}) ==="
             )
             logger.debug(f"Response content: {content}")
 
@@ -72,7 +74,7 @@ class LLMService:
 
         except Exception as e:
             logger.error(
-                f"\n=== Error calling ZhipuAI for major {major_info['major_id']}: {str(e)} ==="
+                f"\n=== Error calling ZhipuAI for {major_info['major_name']} (ID: {major_info['major_id']}): {str(e)} ==="
             )
             raise
 
@@ -80,7 +82,9 @@ class LLMService:
         try:
             prompt = get_major_ask_prompt(context, question)
 
-            logger.info(f"\n=== Sending question to ZhipuAI for major {context['major_id']} ===")
+            logger.info(
+                f"\n=== Sending question to ZhipuAI for {context['major_name']} (ID: {context['major_id']}) ==="
+            )
 
             response = self.client.chat.completions.create(
                 model=os.getenv("ZHIPUAI_MODEL"),
@@ -89,11 +93,15 @@ class LLMService:
             )
 
             content = response.choices[0].message.content
-            logger.info(f"\n=== Received answer from ZhipuAI for major {context['major_id']} ===")
+            logger.info(
+                f"\n=== Received answer from ZhipuAI for {context['major_name']} (ID: {context['major_id']}) ==="
+            )
             logger.debug(f"Response content: {content}")
 
             return content
 
         except Exception as e:
-            logger.error(f"\n=== Error calling ZhipuAI for major {context['major_id']}: {str(e)} ===")
+            logger.error(
+                f"\n=== Error calling ZhipuAI for {context['major_name']} (ID: {context['major_id']}): {str(e)} ==="
+            )
             raise

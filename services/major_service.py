@@ -70,4 +70,11 @@ class MajorService:
         
         # Save and return the intro content
         return self.repository.save_major_intro(major_id, intro_content)
+
+    def ask_major_question(self, question, context):
+        try:
+            return self.llm_service.ask_major_question(question, context)
+        except Exception as e:
+            logger.error(f"Error getting AI answer for major {context['major_id']}: {str(e)}")
+            raise
   

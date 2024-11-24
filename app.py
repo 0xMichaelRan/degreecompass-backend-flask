@@ -3,6 +3,10 @@ from flask_cors import CORS
 from routes.major_routes import major_bp
 import os
 from dotenv import load_dotenv
+from config.logging_config import setup_logging
+
+# Setup logging before any other imports
+setup_logging()
 
 # Load environment variables from .env file
 load_dotenv()

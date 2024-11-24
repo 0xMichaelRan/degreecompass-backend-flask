@@ -1,6 +1,9 @@
 import psycopg2
 from psycopg2.extras import RealDictCursor
 from config.db_config import db_config
+import logging
+
+logger = logging.getLogger(__name__)
 
 class DatabaseService:
     @staticmethod
@@ -15,6 +18,8 @@ class DatabaseService:
 
     @staticmethod
     def execute_query(query, params=None):
+        logger.debug("Executing query: %s", query)
+        logger.debug("Query parameters: %s", params)
         try:
             conn = DatabaseService.get_connection()
             cur = conn.cursor(cursor_factory=RealDictCursor)
@@ -23,8 +28,12 @@ class DatabaseService:
             conn.commit()
             cur.close()
             conn.close()
+            logger.info(f"Query executed successfully, returned {len(result)} rows")
             return result
         except Exception as e:
+            logger.error(f"Database error: {str(e)}")
+            logger.error(f"Query: {query}")
+            logger.error(f"Params: {params}")
             conn.rollback()
             raise e
 

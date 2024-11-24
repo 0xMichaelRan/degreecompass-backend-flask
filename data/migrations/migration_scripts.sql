@@ -18,3 +18,6 @@ CREATE TABLE major_intro (
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (major_id) REFERENCES majors(major_id)
 ); 
+
+-- TODO: actually support pinyin in search
+ALTER TABLE majors ADD COLUMN major_name_pinyin VARCHAR(255);

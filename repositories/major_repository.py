@@ -1,5 +1,8 @@
 from services.db_service import DatabaseService
 from services.sql_parser_service import SQLParserService
+import logging
+
+logger = logging.getLogger(__name__)
 
 
 class MajorRepository:
@@ -92,7 +95,7 @@ class MajorRepository:
     @staticmethod
     def save_major_qa(major_id, qa_sql_statements):
         try:
-            print(f"=== Starting save_major_qa for major {major_id} ===")
+            logger.info(f"=== Starting save_major_qa for major {major_id} ===")
 
             # First delete existing QA
             DatabaseService.execute_query(
@@ -118,7 +121,7 @@ class MajorRepository:
                     )
                     executed_count += 1
 
-            print(f"\nTotal statements executed: {executed_count}")
+            logger.info(f"Total statements executed: {executed_count}")
 
             # Return all QA for this major
             result = DatabaseService.execute_query(
@@ -135,10 +138,9 @@ class MajorRepository:
             return result or []
 
         except Exception as e:
-            print("\n!!! Error in save_major_qa !!!")
-            print(f"Major ID: {major_id}")
-            print(f"Error type: {type(e).__name__}")
-            print(f"Error message: {str(e)}")
+            logger.error(f"Error in save_major_qa for major {major_id}")
+            logger.error(f"Error type: {type(e).__name__}")
+            logger.error(f"Error message: {str(e)}")
             raise
 
     @staticmethod
@@ -158,7 +160,7 @@ class MajorRepository:
     @staticmethod
     def save_major_intro(major_id, intro_content):
         try:
-            print(f"=== Starting save_major_intro for major {major_id} ===")
+            logger.info(f"=== Starting save_major_intro for major {major_id} ===")
             
             # Save or update intro content
             result = DatabaseService.execute_single_query(
@@ -174,7 +176,7 @@ class MajorRepository:
                 (major_id, intro_content),
             )
             
-            print(f"Successfully saved intro for major {major_id}")
+            logger.info(f"Successfully saved intro for major {major_id}")
             
             if not result:
                 return None
@@ -182,10 +184,9 @@ class MajorRepository:
             return result
             
         except Exception as e:
-            print("\n!!! Error in save_major_intro !!!")
-            print(f"Major ID: {major_id}")
-            print(f"Error type: {type(e).__name__}")
-            print(f"Error message: {str(e)}")
+            logger.error(f"Error in save_major_intro for major {major_id}")
+            logger.error(f"Error type: {type(e).__name__}")
+            logger.error(f"Error message: {str(e)}")
             raise
 
     @staticmethod

@@ -80,32 +80,20 @@ class LLMService:
         try:
             prompt = get_major_ask_prompt(context, question)
 
-            logger.info(
-                f"\n=== Sending question to ZhipuAI for major {context['major_id']} ==="
-            )
+            logger.info(f"\n=== Sending question to ZhipuAI for major {context['major_id']} ===")
 
             response = self.client.chat.completions.create(
                 model=os.getenv("ZHIPUAI_MODEL"),
-                messages=[
-                    {
-                        "role": "system",
-                        "content": "You are a helpful academic advisor who specializes in providing information about college majors and career paths.",
-                    },
-                    {"role": "user", "content": prompt},
-                ],
+                messages=[{"role": "user", "content": prompt}],
                 temperature=0.7,
             )
 
             content = response.choices[0].message.content
-            logger.info(
-                f"\n=== Received answer from ZhipuAI for major {context['major_id']} ==="
-            )
+            logger.info(f"\n=== Received answer from ZhipuAI for major {context['major_id']} ===")
             logger.debug(f"Response content: {content}")
 
             return content
 
         except Exception as e:
-            logger.error(
-                f"\n=== Error calling ZhipuAI for major {context['major_id']}: {str(e)} ==="
-            )
+            logger.error(f"\n=== Error calling ZhipuAI for major {context['major_id']}: {str(e)} ===")
             raise

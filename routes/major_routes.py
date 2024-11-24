@@ -94,3 +94,23 @@ def ask_major_question(major_id):
         return jsonify({'error': str(e)}), 404
     except Exception as e:
         return jsonify({'error': str(e)}), 500
+
+@major_bp.route('/majors/search', methods=['GET'])
+def search_majors():
+    try:
+        keyword = request.args.get('keyword', '')
+        if not keyword:
+            return jsonify({'data': [], 'pagination': {
+                'page': 1,
+                'page_size': 0,
+                'total_count': 0,
+                'total_pages': 0
+            }}), 200
+            
+        page = max(int(request.args.get('page', 1)), 1)
+        page_size = int(request.args.get('page_size', 28))
+        
+        result = major_service.search_majors(keyword, page, page_size)
+        return jsonify(result), 200
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500

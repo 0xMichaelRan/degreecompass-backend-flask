@@ -193,3 +193,29 @@ class MajorRepository:
         return DatabaseService.execute_single_query(
             "SELECT * FROM major_intro WHERE major_id = %s", (major_id,)
         )
+
+    @staticmethod
+    def search_majors(keyword, limit, offset):
+        result = DatabaseService.execute_query(
+            """
+            SELECT m.*, c.category_name, s.subject_name
+            FROM majors m
+            LEFT JOIN subjects s ON m.subject_id = s.subject_id
+            LEFT JOIN categories c ON s.category_id = c.category_id
+            WHERE m.major_name ILIKE %s
+            ORDER BY m.major_id
+            LIMIT %s OFFSET %s
+            """,
+            (f"%{keyword}%", limit, offset),
+        )
+        
+        count = DatabaseService.execute_single_query(
+            """
+            SELECT COUNT(*)
+            FROM majors
+            WHERE major_name ILIKE %s
+            """,
+            (f"%{keyword}%",),
+        )['count']
+        
+        return result, count

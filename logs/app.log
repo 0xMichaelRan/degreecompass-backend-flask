@@ -66,3 +66,162 @@
 2024-11-25 18:04:55,032 - services.db_service - INFO - Query executed successfully, returned 1 rows
 2024-11-25 18:04:55,032 - repositories.major_repository - INFO - Total statements executed: 5
 2024-11-25 18:04:55,057 - services.db_service - INFO - Query executed successfully, returned 5 rows
+2024-11-25 18:11:01,491 - werkzeug - WARNING -  * Debugger is active!
+2024-11-25 18:11:59,425 - services.major_service - INFO - Getting intro data for major 050102
+2024-11-25 18:11:59,453 - services.major_service - INFO - No cached intro found for major 050102, generating new content
+2024-11-25 18:11:59,483 - services.llm_service - INFO - 
+=== Sending intro request to ZhipuAI for 汉语言 (ID: 050102) ===
+2024-11-25 18:12:03,310 - httpx - INFO - HTTP Request: POST https://open.bigmodel.cn/api/paas/v4/chat/completions "HTTP/1.1 200 OK"
+2024-11-25 18:12:03,314 - services.llm_service - INFO - 
+=== Received intro response from ZhipuAI for 汉语言 (ID: 050102) ===
+2024-11-25 18:12:03,314 - repositories.major_repository - INFO - 
+=== Starting save_major_intro for major 050102 ===
+2024-11-25 18:12:03,339 - repositories.major_repository - INFO - Successfully saved intro for major 050102
+2024-11-25 18:12:30,103 - werkzeug - WARNING -  * Debugger is active!
+2024-11-25 18:14:08,451 - services.major_service - INFO - Getting intro data for major 010101
+2024-11-25 18:14:08,468 - services.major_service - INFO - No cached intro found for major 010101, generating new content
+2024-11-25 18:14:08,486 - services.llm_service - INFO - 
+=== Sending intro request to ZhipuAI for 哲学 (ID: 010101) ===
+2024-11-25 18:14:12,864 - httpx - INFO - HTTP Request: POST https://open.bigmodel.cn/api/paas/v4/chat/completions "HTTP/1.1 200 OK"
+2024-11-25 18:14:12,868 - services.llm_service - INFO - 
+=== Received intro response from ZhipuAI for 哲学 (ID: 010101) ===
+2024-11-25 18:14:12,868 - repositories.major_repository - INFO - 
+=== Starting save_major_intro for major 010101 ===
+2024-11-25 18:14:12,892 - repositories.major_repository - INFO - Successfully saved intro for major 010101
+2024-11-25 18:14:12,897 - services.major_service - INFO - Getting QA data for major 010101
+2024-11-25 18:14:12,921 - services.db_service - INFO - Query executed successfully, returned 0 rows
+2024-11-25 18:14:12,921 - services.major_service - INFO - No cached QA found for major 010101, generating new content
+2024-11-25 18:14:12,945 - services.llm_service - INFO - 
+=== Sending QA request to ZhipuAI for 哲学 (ID: 010101) ===
+2024-11-25 18:14:21,319 - httpx - INFO - HTTP Request: POST https://open.bigmodel.cn/api/paas/v4/chat/completions "HTTP/1.1 200 OK"
+2024-11-25 18:14:21,322 - services.llm_service - INFO - 
+=== Received QA response from ZhipuAI for 哲学 (ID: 010101) ===
+2024-11-25 18:14:21,322 - repositories.major_repository - INFO - 
+=== Starting save_major_qa for major 010101 ===
+2024-11-25 18:14:21,349 - services.db_service - INFO - Query executed successfully, returned 0 rows
+2024-11-25 18:14:21,373 - services.db_service - INFO - Query executed successfully, returned 1 rows
+2024-11-25 18:14:21,396 - services.db_service - INFO - Query executed successfully, returned 1 rows
+2024-11-25 18:14:21,418 - services.db_service - INFO - Query executed successfully, returned 1 rows
+2024-11-25 18:14:21,439 - services.db_service - INFO - Query executed successfully, returned 1 rows
+2024-11-25 18:14:21,456 - services.db_service - INFO - Query executed successfully, returned 1 rows
+2024-11-25 18:14:21,456 - repositories.major_repository - INFO - Total statements executed: 5
+2024-11-25 18:14:21,478 - services.db_service - INFO - Query executed successfully, returned 5 rows
+2024-11-25 18:15:24,006 - werkzeug - WARNING -  * Debugger is active!
+2024-11-25 18:15:40,257 - werkzeug - WARNING -  * Debugger is active!
+2024-11-25 18:15:49,523 - werkzeug - WARNING -  * Debugger is active!
+2024-11-25 18:15:52,090 - services.major_service - INFO - Getting intro data for major 010101
+2024-11-25 18:15:52,116 - services.major_service - INFO - Found cached intro data for major 010101
+2024-11-25 18:15:52,123 - services.major_service - INFO - Getting QA data for major 010101
+2024-11-25 18:15:52,147 - services.db_service - INFO - Query executed successfully, returned 5 rows
+2024-11-25 18:15:52,147 - services.major_service - INFO - Found cached QA data for major 010101
+2024-11-25 18:16:33,462 - werkzeug - WARNING -  * Debugger is active!
+2024-11-25 18:16:34,582 - services.major_service - INFO - Getting intro data for major 010101
+2024-11-25 18:16:34,606 - services.major_service - INFO - Found cached intro data for major 010101
+2024-11-25 18:16:34,611 - services.major_service - INFO - Getting QA data for major 010101
+2024-11-25 18:16:34,636 - services.db_service - INFO - Query executed successfully, returned 5 rows
+2024-11-25 18:16:34,636 - services.major_service - INFO - Found cached QA data for major 010101
+2024-11-25 18:16:34,669 - services.major_service - INFO - Getting intro data for major 010102
+2024-11-25 18:16:34,694 - services.major_service - INFO - Found cached intro data for major 010102
+2024-11-25 18:16:34,699 - services.major_service - INFO - Getting QA data for major 010102
+2024-11-25 18:16:34,722 - services.db_service - INFO - Query executed successfully, returned 5 rows
+2024-11-25 18:16:34,722 - services.major_service - INFO - Found cached QA data for major 010102
+2024-11-25 18:16:34,752 - services.major_service - INFO - Getting intro data for major 010103K
+2024-11-25 18:16:34,776 - services.major_service - INFO - Found cached intro data for major 010103K
+2024-11-25 18:16:34,780 - services.major_service - INFO - Getting QA data for major 010103K
+2024-11-25 18:16:34,804 - services.db_service - INFO - Query executed successfully, returned 5 rows
+2024-11-25 18:16:34,804 - services.major_service - INFO - Found cached QA data for major 010103K
+2024-11-25 18:16:34,834 - services.major_service - INFO - Getting intro data for major 010104T
+2024-11-25 18:16:34,856 - services.major_service - INFO - No cached intro found for major 010104T, generating new content
+2024-11-25 18:16:34,880 - services.llm_service - INFO - 
+=== Sending intro request to ZhipuAI for 伦理学 (ID: 010104T) ===
+2024-11-25 18:16:38,875 - httpx - INFO - HTTP Request: POST https://open.bigmodel.cn/api/paas/v4/chat/completions "HTTP/1.1 200 OK"
+2024-11-25 18:16:38,881 - services.llm_service - INFO - 
+=== Received intro response from ZhipuAI for 伦理学 (ID: 010104T) ===
+2024-11-25 18:16:38,881 - repositories.major_repository - INFO - 
+=== Starting save_major_intro for major 010104T ===
+2024-11-25 18:16:38,926 - repositories.major_repository - INFO - Successfully saved intro for major 010104T
+2024-11-25 18:16:38,934 - services.major_service - INFO - Getting QA data for major 010104T
+2024-11-25 18:16:38,987 - services.db_service - INFO - Query executed successfully, returned 0 rows
+2024-11-25 18:16:38,988 - services.major_service - INFO - No cached QA found for major 010104T, generating new content
+2024-11-25 18:16:39,034 - services.llm_service - INFO - 
+=== Sending QA request to ZhipuAI for 伦理学 (ID: 010104T) ===
+2024-11-25 18:16:49,160 - httpx - INFO - HTTP Request: POST https://open.bigmodel.cn/api/paas/v4/chat/completions "HTTP/1.1 200 OK"
+2024-11-25 18:16:49,163 - services.llm_service - INFO - 
+=== Received QA response from ZhipuAI for 伦理学 (ID: 010104T) ===
+2024-11-25 18:16:49,163 - repositories.major_repository - INFO - 
+=== Starting save_major_qa for major 010104T ===
+2024-11-25 18:16:49,187 - services.db_service - INFO - Query executed successfully, returned 0 rows
+2024-11-25 18:16:49,211 - services.db_service - INFO - Query executed successfully, returned 1 rows
+2024-11-25 18:16:49,234 - services.db_service - INFO - Query executed successfully, returned 1 rows
+2024-11-25 18:16:49,256 - services.db_service - INFO - Query executed successfully, returned 1 rows
+2024-11-25 18:16:49,278 - services.db_service - INFO - Query executed successfully, returned 1 rows
+2024-11-25 18:16:49,315 - services.db_service - INFO - Query executed successfully, returned 1 rows
+2024-11-25 18:16:49,316 - repositories.major_repository - INFO - Total statements executed: 5
+2024-11-25 18:16:49,367 - services.db_service - INFO - Query executed successfully, returned 5 rows
+2024-11-25 18:16:49,464 - services.major_service - INFO - Getting intro data for major 020101
+2024-11-25 18:16:49,535 - services.major_service - INFO - No cached intro found for major 020101, generating new content
+2024-11-25 18:16:49,586 - services.llm_service - INFO - 
+=== Sending intro request to ZhipuAI for 经济学 (ID: 020101) ===
+2024-11-25 18:16:53,269 - httpx - INFO - HTTP Request: POST https://open.bigmodel.cn/api/paas/v4/chat/completions "HTTP/1.1 200 OK"
+2024-11-25 18:16:53,272 - services.llm_service - INFO - 
+=== Received intro response from ZhipuAI for 经济学 (ID: 020101) ===
+2024-11-25 18:16:53,272 - repositories.major_repository - INFO - 
+=== Starting save_major_intro for major 020101 ===
+2024-11-25 18:16:53,299 - repositories.major_repository - INFO - Successfully saved intro for major 020101
+2024-11-25 18:16:53,305 - services.major_service - INFO - Getting QA data for major 020101
+2024-11-25 18:16:53,350 - services.db_service - INFO - Query executed successfully, returned 0 rows
+2024-11-25 18:16:53,350 - services.major_service - INFO - No cached QA found for major 020101, generating new content
+2024-11-25 18:16:53,376 - services.llm_service - INFO - 
+=== Sending QA request to ZhipuAI for 经济学 (ID: 020101) ===
+2024-11-25 18:17:03,919 - httpx - INFO - HTTP Request: POST https://open.bigmodel.cn/api/paas/v4/chat/completions "HTTP/1.1 200 OK"
+2024-11-25 18:17:03,922 - services.llm_service - INFO - 
+=== Received QA response from ZhipuAI for 经济学 (ID: 020101) ===
+2024-11-25 18:17:03,922 - repositories.major_repository - INFO - 
+=== Starting save_major_qa for major 020101 ===
+2024-11-25 18:17:03,946 - services.db_service - INFO - Query executed successfully, returned 0 rows
+2024-11-25 18:17:03,971 - services.db_service - INFO - Query executed successfully, returned 1 rows
+2024-11-25 18:17:03,994 - services.db_service - INFO - Query executed successfully, returned 1 rows
+2024-11-25 18:17:04,020 - services.db_service - INFO - Query executed successfully, returned 1 rows
+2024-11-25 18:17:04,043 - services.db_service - INFO - Query executed successfully, returned 1 rows
+2024-11-25 18:17:04,072 - services.db_service - INFO - Query executed successfully, returned 1 rows
+2024-11-25 18:17:04,073 - repositories.major_repository - INFO - Total statements executed: 5
+2024-11-25 18:17:04,145 - services.db_service - INFO - Query executed successfully, returned 5 rows
+2024-11-25 18:17:04,201 - services.major_service - INFO - Getting intro data for major 020102
+2024-11-25 18:17:04,225 - services.major_service - INFO - Found cached intro data for major 020102
+2024-11-25 18:17:04,229 - services.major_service - INFO - Getting QA data for major 020102
+2024-11-25 18:17:04,254 - services.db_service - INFO - Query executed successfully, returned 5 rows
+2024-11-25 18:17:04,254 - services.major_service - INFO - Found cached QA data for major 020102
+2024-11-25 18:17:04,286 - services.major_service - INFO - Getting intro data for major 020103T
+2024-11-25 18:17:04,309 - services.major_service - INFO - No cached intro found for major 020103T, generating new content
+2024-11-25 18:17:04,336 - services.llm_service - INFO - 
+=== Sending intro request to ZhipuAI for 国民经济管理 (ID: 020103T) ===
+2024-11-25 18:17:07,875 - httpx - INFO - HTTP Request: POST https://open.bigmodel.cn/api/paas/v4/chat/completions "HTTP/1.1 200 OK"
+2024-11-25 18:17:07,878 - services.llm_service - INFO - 
+=== Received intro response from ZhipuAI for 国民经济管理 (ID: 020103T) ===
+2024-11-25 18:17:07,878 - repositories.major_repository - INFO - 
+=== Starting save_major_intro for major 020103T ===
+2024-11-25 18:17:07,903 - repositories.major_repository - INFO - Successfully saved intro for major 020103T
+2024-11-25 18:17:07,907 - services.major_service - INFO - Getting QA data for major 020103T
+2024-11-25 18:17:07,931 - services.db_service - INFO - Query executed successfully, returned 0 rows
+2024-11-25 18:17:07,932 - services.major_service - INFO - No cached QA found for major 020103T, generating new content
+2024-11-25 18:17:07,961 - services.llm_service - INFO - 
+=== Sending QA request to ZhipuAI for 国民经济管理 (ID: 020103T) ===
+2024-11-25 18:17:17,256 - httpx - INFO - HTTP Request: POST https://open.bigmodel.cn/api/paas/v4/chat/completions "HTTP/1.1 200 OK"
+2024-11-25 18:17:17,259 - services.llm_service - INFO - 
+=== Received QA response from ZhipuAI for 国民经济管理 (ID: 020103T) ===
+2024-11-25 18:17:17,259 - repositories.major_repository - INFO - 
+=== Starting save_major_qa for major 020103T ===
+2024-11-25 18:17:17,284 - services.db_service - INFO - Query executed successfully, returned 0 rows
+2024-11-25 18:17:17,308 - services.db_service - INFO - Query executed successfully, returned 1 rows
+2024-11-25 18:17:17,330 - services.db_service - INFO - Query executed successfully, returned 1 rows
+2024-11-25 18:17:17,355 - services.db_service - INFO - Query executed successfully, returned 1 rows
+2024-11-25 18:17:17,378 - services.db_service - INFO - Query executed successfully, returned 1 rows
+2024-11-25 18:17:17,401 - services.db_service - INFO - Query executed successfully, returned 1 rows
+2024-11-25 18:17:17,401 - repositories.major_repository - INFO - Total statements executed: 5
+2024-11-25 18:17:17,426 - services.db_service - INFO - Query executed successfully, returned 5 rows
+2024-11-25 18:17:17,457 - services.major_service - INFO - Getting intro data for major 020104T
+2024-11-25 18:17:17,480 - services.major_service - INFO - Found cached intro data for major 020104T
+2024-11-25 18:17:17,485 - services.major_service - INFO - Getting QA data for major 020104T
+2024-11-25 18:17:17,509 - services.db_service - INFO - Query executed successfully, returned 5 rows
+2024-11-25 18:17:17,509 - services.major_service - INFO - Found cached QA data for major 020104T
+2024-11-25 18:17:50,893 - werkzeug - WARNING -  * Debugger is active!

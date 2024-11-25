@@ -12,6 +12,7 @@ flask-cors = "^5.0.0"
 psycopg2 = "^2.9.3"
 python-dotenv = "^1.0.0"
 zhipuai = "^2.1.5.20230904"
+requests = "^2.32.3"
 
 [build-system]
 requires = ["poetry-core"]
